@@ -2,7 +2,7 @@
 using System.Collections;
 
 [RequireComponent (typeof (Player))]
-public class PlayerInput : MonoBehaviour {
+public class PlayerInput2 : MonoBehaviour {
 
     Player player;
 

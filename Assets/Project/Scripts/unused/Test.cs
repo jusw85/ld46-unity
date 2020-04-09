@@ -15,4 +15,15 @@ public class Test : MonoBehaviour
     void Update()
     {
     }
+
+    // always called before Update and LateUpdate
+    private void OnTriggerEnter2D(Collider2D other)
+    {
+        // Debug.Log("OnTriggerEnter! " + Time.frameCount);
+    }
+    
+    private void OnTriggerStay2D(Collider2D other)
+    {
+        // Debug.Log("OnTriggerStay!" + Time.frameCount);
+    }
 }
