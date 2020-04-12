@@ -35,7 +35,7 @@ namespace Jusw85.Common
     /// Future:
     /// Allow minimum rays = 1. Origin from the centre of the sides of the AABB
     /// 
-    /// For additional specific function e.g. stairs in a platformer, possibly extend
+    /// For additional specific function e.g. castlevania stairs in a platformer, possibly extend
     /// as a subclass e.g. PlatformingRaycaster
     /// 
     /// Currently rays are drawn in playmode using Debug.Drawray based on collision direction.
@@ -52,13 +52,13 @@ namespace Jusw85.Common
     public class Raycaster : MonoBehaviour
     {
         [SerializeField] private LayerMask collisionMask = 0;
-        [SerializeField] private int horizontalRayCount = 4;
-        [SerializeField] private int verticalRayCount = 4;
+        [SerializeField] private int horizontalRayCount = 3;
+        [SerializeField] private int verticalRayCount = 3;
         [SerializeField] private float skinWidth = .05f;
-
-        private Collider2D coll;
         private float horizontalRaySpacing;
         private float verticalRaySpacing;
+
+        private Collider2D coll;
 
         private void Awake()
         {

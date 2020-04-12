@@ -286,7 +286,7 @@ MonoBehaviour:
       m_Calls: []
   m_FontData:
     m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
-    m_FontSize: 21
+    m_FontSize: 16
     m_FontStyle: 0
     m_BestFit: 0
     m_MinSize: 0
@@ -297,13 +297,19 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 'Falling under Physics2D isn''t precise
+  m_Text: 'There''s a slight pixel gap due to skin width
 
-    There''s a slight pixel gap
-    sometimes due to float precision
+    Final Y value after
+    falling should be precisely -1.5f
 
-    Final Y value after falling should be precisely
-    -1.5f'
+    Box2D keep them slightly separated to
+    prevent tunneling
+
+    Can make collider slightly smaller, or scale up the game
+
+    https://gamedev.stackexchange.com/questions/15092/rectangles-render-with-gaps-in-between-them-box2d
+
+    https://gamedev.stackexchange.com/questions/150724/object-in-box2d-doesnt-sit-perfectly-on-top-of-other-object'
 --- !u!222 &570564678
 CanvasRenderer:
   m_ObjectHideFlags: 0

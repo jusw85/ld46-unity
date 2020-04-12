@@ -2,7 +2,10 @@
 
 namespace Jusw85.Common
 {
-    public class Physics2DManager : MonoBehaviour
+    /// <summary>
+    /// - Set script execution after other scripts have updated their rb2ds 
+    /// </summary>
+    public class Physics2DSimulate : MonoBehaviour
     {
         private void Awake()
         {
