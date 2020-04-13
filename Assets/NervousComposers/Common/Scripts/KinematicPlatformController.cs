@@ -21,7 +21,7 @@ namespace Jusw85.Common
     [RequireComponent(typeof(Raycaster), typeof(Rigidbody2D))]
     public class KinematicPlatformController : MonoBehaviour
     {
-        #region Members Variables
+        #region Member Variables
 
         [SerializeField] private float jumpHeight = 4;
         [SerializeField] private float timeToJumpApex = 0.4f;
