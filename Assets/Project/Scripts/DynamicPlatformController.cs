@@ -1,4 +1,5 @@
-﻿using Jusw85.Common;
+﻿using System;
+using Jusw85.Common;
 using UnityEngine;
 
 [RequireComponent(typeof(Raycaster))]
@@ -11,6 +12,8 @@ public class DynamicPlatformController : MonoBehaviour
     [SerializeField] private Vector2 groundCheckProtrusion = new Vector2(0, -0.05f);
     [SerializeField] private float earlyJumpTimeTolerance = 0.1f;
     [SerializeField] private float lateJumpTimeTolerance = 0.1f;
+    public event Action IsJumpingThisFrameCallback;
+    public event Action IsLandingThisFrameCallback;
 
     #endregion
 
@@ -24,6 +27,7 @@ public class DynamicPlatformController : MonoBehaviour
     #region Internal State Variables
 
     private float walkDir;
+    private Vector2 velocity;
     private bool isGrounded;
     private int jumpCount;
     private float jumpActuatedTime = -1f;
@@ -57,11 +61,12 @@ public class DynamicPlatformController : MonoBehaviour
         else if (!prevIsGrounded && isGrounded)
         {
             touchedGroundTime = Time.time;
+            IsLandingThisFrameCallback?.Invoke();
         }
 
         // Update velocity
-        Vector2 v = rb2d.velocity;
-        v.x = walkDir * walkVelocity;
+        velocity = rb2d.velocity;
+        velocity.x = walkDir * walkVelocity;
         if (isJumpingThisFrame)
         {
             if (isGrounded)
@@ -80,7 +85,7 @@ public class DynamicPlatformController : MonoBehaviour
             DoJump();
         }
 
-        rb2d.velocity = v;
+        rb2d.velocity = velocity;
 
         // Reset transient frame variables
         isJumpingThisFrame = false;
@@ -89,8 +94,9 @@ public class DynamicPlatformController : MonoBehaviour
         void DoJump()
         {
             jumpCount++;
-            v.y = jumpVelocity;
+            velocity.y = jumpVelocity;
             jumpActuatedTime = -1f;
+            IsJumpingThisFrameCallback?.Invoke();
         }
     }
 
@@ -106,6 +112,12 @@ public class DynamicPlatformController : MonoBehaviour
         isJumpingThisFrame = true;
         jumpActuatedTime = Time.time;
     }
+
+    public float WalkDir => walkDir;
+
+    public bool IsGrounded => isGrounded;
+
+    public Vector2 Velocity => velocity;
 
     #endregion
 }

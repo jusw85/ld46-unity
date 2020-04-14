@@ -551,7 +551,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 10
   m_Sprite: {fileID: 21300000, guid: 61b7f171a04e2a5b095fc09fc4c6ec78, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -610,7 +610,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f9fc31d0e83cc6a1ea55cc779b17a534, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  walkVelocity: 8
+  walkVelocity: 12
   jumpVelocity: 20
   groundCheckProtrusion: {x: 0, y: -0.05}
   earlyJumpTimeTolerance: 0.1
@@ -692,6 +692,27 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!1 &1837067352 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4440591747063787736, guid: eaa4982730ebb1f62aa394b0f2fb68dd,
+    type: 3}
+  m_PrefabInstance: {fileID: 4440591746538194315}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1837067353
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1837067352}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b6330e30e47956726a369deff24b51d1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  targetPos: {fileID: 1791992974}
+  offsetX: 0
+  offsetY: 0
 --- !u!1001 &4440591746538194315
 PrefabInstance:
   m_ObjectHideFlags: 0
