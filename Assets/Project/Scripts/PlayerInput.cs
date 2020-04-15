@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using k;
 using UnityEngine;
 
 [RequireComponent(typeof(DynamicPlatformController))]
@@ -9,8 +10,6 @@ public class PlayerInput : MonoBehaviour
 
     private Animator animator;
     private DynamicPlatformController platformController;
-    private static Dictionary<string, int> paramIdMap;
-    private static readonly string[] paramIds = {"running", "vSpeed", "isGrounded"};
 
     private bool isFacingRight = true;
     
@@ -18,15 +17,6 @@ public class PlayerInput : MonoBehaviour
     {
         animator = GetComponent<Animator>();
         platformController = GetComponent<DynamicPlatformController>();
-
-        if (paramIdMap == null)
-        {
-            paramIdMap = new Dictionary<string, int>();
-            foreach (var paramId in paramIds)
-            {
-                paramIdMap.Add(paramId, Animator.StringToHash(paramId));
-            }
-        }
     }
 
     private void Update()
@@ -52,9 +42,9 @@ public class PlayerInput : MonoBehaviour
             platformController.Jump();
         }
         
-        animator.SetBool(paramIdMap["running"], Mathf.Abs(platformController.Velocity.x) > 0);
-        animator.SetBool(paramIdMap["isGrounded"], platformController.IsGrounded);
-        animator.SetFloat(paramIdMap["vSpeed"], platformController.Velocity.y);
+        animator.SetBool(AnimatorParams.RUNNING, Mathf.Abs(platformController.Velocity.x) > 0);
+        animator.SetBool(AnimatorParams.IS_GROUNDED, platformController.IsGrounded);
+        animator.SetFloat(AnimatorParams.V_SPEED, platformController.Velocity.y);
     }
 
     private void SetIsFacingRight(bool isFacingRight)

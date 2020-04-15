@@ -10,6 +10,7 @@ public class Physics2DSettings : MonoBehaviour
 
     private void Awake()
     {
+        UpdateGravity();
         Physics2D.autoSimulation = true;
         Physics2D.queriesStartInColliders = false;
         Physics2D.autoSyncTransforms = false;

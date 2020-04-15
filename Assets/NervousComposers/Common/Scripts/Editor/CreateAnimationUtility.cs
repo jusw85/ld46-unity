@@ -11,20 +11,27 @@ namespace Jusw85.Common
         private int targetFrameInterval;
 
         [MenuItem("Tools/Nervous Composers/Create Animation Utility")]
-        public static void CreateAll()
+        private static void CreateAnimationUtilityMenu()
         {
             GetWindow(typeof(CreateAnimationUtility));
         }
 
         private void OnGUI()
         {
-            GUILayout.Label("Set clip timings");
+            EditorGUILayout.LabelField("Set clip timings");
             clip = (AnimationClip) EditorGUILayout.ObjectField("Animation Clip", clip, typeof(AnimationClip), false);
             targetFrameInterval = EditorGUILayout.IntField("Num frames between sprites", targetFrameInterval);
-            if (GUILayout.Button("Set clip timings"))
-            {
-                SetClipTimings();
-            }
+            if (GUILayout.Button("Set clip timings")) SetClipTimings();
+
+            EditorGUILayout.Space(20);
+            EditorGUILayout.LabelField("Generate Animator Parameter Settings");
+            if (GUILayout.Button("Reset Default Settings")) GenerateAnimatorParameters.DefaultSettings();
+            GenerateAnimatorParameters.searchPath =
+                EditorGUILayout.TextField("Search path", GenerateAnimatorParameters.searchPath);
+            GenerateAnimatorParameters.outFolder =
+                EditorGUILayout.TextField("Out Folder", GenerateAnimatorParameters.outFolder);
+            GenerateAnimatorParameters.fileName =
+                EditorGUILayout.TextField("Filename", GenerateAnimatorParameters.fileName);
         }
 
         private void SetClipTimings()
