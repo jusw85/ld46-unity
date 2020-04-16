@@ -17,7 +17,7 @@ namespace Jusw85.Common
         private static string NAMESPACE = "k";
         private static string DIGIT_PREFIX = "k";
 
-        [MenuItem("Tools/Nervous Composers/Generate Animator Parameters")]
+        [MenuItem("Tools/Nervous Composers/Generate Animator Parameters", false, 110)]
         private static void GenerateAnimatorParametersMenu()
         {
             DoGenerateAnimatorParameters();

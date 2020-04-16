@@ -10,7 +10,7 @@ namespace Jusw85.Common
         private AnimationClip clip;
         private int targetFrameInterval;
 
-        [MenuItem("Tools/Nervous Composers/Create Animation Utility")]
+        [MenuItem("Tools/Nervous Composers/Create Animation Utility", false, 100)]
         private static void CreateAnimationUtilityMenu()
         {
             GetWindow(typeof(CreateAnimationUtility));

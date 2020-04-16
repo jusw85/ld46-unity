@@ -32,7 +32,7 @@ namespace Prime31Editor
 		private static string TOTAL_SCENES_CONSTANT_NAME = CONSTANT_NAMING_STYLE == ConstantNamingStyle.UppercaseWithUnderscores ? "TOTAL_SCENES" : "TotalScenes";
 
 
-		[MenuItem( "Tools/Prime31/Generate Constants Classes" )]
+		[MenuItem( "Tools/Prime31/Generate Constants Classes", false, 200 )]
 		static void rebuildConstantsClassesMenuItem()
 		{
 			rebuildConstantsClasses();

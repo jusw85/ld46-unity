@@ -21,7 +21,7 @@ namespace Prime31
 
         public AudioMixerGroup bgmGroup;
         public AudioMixerGroup sfxGroup;
-        
+
         [NonSerialized] public SKSound backgroundSound;
         private SKSound oneShotSound;
 
@@ -210,8 +210,9 @@ namespace Prime31
             if (audioClip == null)
             {
                 Debug.LogWarning("playSound was called with a null AudioClip.");
-                return null;   
+                return null;
             }
+
             // Find the first SKSound not being used. if they are all in use, create a new one
             SKSound sound = nextAvailableSound();
             sound.playAudioClip(audioClip, volumeScale * soundEffectVolume, pitch, pan, sfxGroup);
@@ -231,8 +232,9 @@ namespace Prime31
             if (audioClip == null)
             {
                 Debug.LogWarning("playSoundLooped was called with a null AudioClip.");
-                return null;   
+                return null;
             }
+
             // find the first SKSound not being used. if they are all in use, create a new one
             SKSound sound = nextAvailableSound();
             sound.playAudioClip(audioClip, soundEffectVolume, 1f, 0f, sfxGroup);
@@ -379,7 +381,8 @@ namespace Prime31
             }
 
 
-            internal void playAudioClip(AudioClip audioClip, float volume, float pitch, float pan, AudioMixerGroup audioMixerGroup)
+            internal void playAudioClip(AudioClip audioClip, float volume, float pitch, float pan,
+                AudioMixerGroup audioMixerGroup)
             {
                 _playingLoopingAudio = false;
                 _elapsedTime = 0;

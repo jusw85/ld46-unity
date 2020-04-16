@@ -10,7 +10,7 @@ namespace Jusw85.Common
     /// </summary>
     public static class ReserializeAssets
     {
-        [MenuItem("Tools/Nervous Composers/Reserialize Assets")]
+        [MenuItem("Tools/Nervous Composers/Reserialize Assets", false, 120)]
         private static void DoReserializeAssets()
         {
             AssetDatabase.ForceReserializeAssets();

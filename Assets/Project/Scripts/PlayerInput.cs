@@ -1,11 +1,13 @@
-﻿using k;
+﻿using Jusw85.Common;
+using k;
 using Prime31;
+using UnityEditor.UIElements;
 using UnityEngine;
 
 [RequireComponent(typeof(DynamicPlatformController))]
 public class PlayerInput : MonoBehaviour
 {
-    [SerializeField] private AudioClip jumpSfx;
+    [SerializeField] private AudioEvent jumpAudio;
     [SerializeField] private float horizontalDeadzone = 0.2f;
     [SerializeField] private float verticalDeadzone = 0.2f;
 
@@ -18,7 +20,15 @@ public class PlayerInput : MonoBehaviour
     {
         animator = GetComponent<Animator>();
         platformController = GetComponent<DynamicPlatformController>();
-        platformController.IsJumpingThisFrameCallback += () => { SoundKit.instance.playSound(jumpSfx); };
+        platformController.IsJumpingThisFrameCallback += () => { jumpAudio?.Play(SoundKit.instance); };
+    }
+
+    private void Start()
+    {
+        SoundKit k = Toolbox.Instance.Get<SoundKit>();
+        // Debug.Log(k.bgmGroup);
+        //
+        // Debug.Log(Toolbox.Instance.Get<Toolbox>());
     }
 
     private void Update()
