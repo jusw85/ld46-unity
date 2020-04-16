@@ -1,4 +1,5 @@
 ﻿using System;
+using k;
 using Prime31;
 using UnityEngine;
 using UnityEngine.SceneManagement;
@@ -9,7 +10,7 @@ public class _Test : MonoBehaviour
 
     private void Start()
     {
-        Scene hudScene = SceneManager.GetSceneByName("HUD");
+        Scene hudScene = SceneManager.GetSceneByName(Scenes.HUD);
 
         if (Application.isEditor && hudScene.isLoaded)
         {
@@ -18,7 +19,7 @@ public class _Test : MonoBehaviour
         else
         {
             enabled = false;
-            AsyncOperation op = SceneManager.LoadSceneAsync("HUD", LoadSceneMode.Additive);
+            AsyncOperation op = SceneManager.LoadSceneAsync(Scenes.HUD, LoadSceneMode.Additive);
             op.completed += operation =>
             {
                 InitHUD();
@@ -33,13 +34,13 @@ public class _Test : MonoBehaviour
             Camera[] cams = FindObjectsOfType<Camera>();
             foreach (Camera cam in cams)
             {
-                if (!cam.gameObject.scene.name.Equals("DynamicPlatforming"))
+                if (!cam.gameObject.scene.name.Equals(Scenes.DYNAMIC_PLATFORMING))
                 {
                     cam.gameObject.SetActive(false);
                 }
             }
             
-            GameObject obj = GameObject.FindWithTag("HUDManager");
+            GameObject obj = GameObject.FindWithTag(Tags.HUDMANAGER);
             if (obj != null)
             {
                 hudManager = obj.GetComponent<HUDManager>();
