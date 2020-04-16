@@ -1,14 +1,23 @@
-﻿using System;
-using k;
+﻿using k;
 using Prime31;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class _Test : MonoBehaviour
+public class MainGame : MonoBehaviour
 {
+    [SerializeField] private AudioClip bgm;
     private HUDManager hudManager;
 
     private void Start()
+    {
+        LoadHUD();
+        if (bgm != null)
+        {
+            SoundKit.instance.playBackgroundMusic(bgm, 1.0f);
+        }
+    }
+
+    private void LoadHUD()
     {
         Scene hudScene = SceneManager.GetSceneByName(Scenes.HUD);
 
@@ -39,7 +48,7 @@ public class _Test : MonoBehaviour
                     cam.gameObject.SetActive(false);
                 }
             }
-            
+
             GameObject obj = GameObject.FindWithTag(Tags.HUDMANAGER);
             if (obj != null)
             {

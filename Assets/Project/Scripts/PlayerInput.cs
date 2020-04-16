@@ -1,10 +1,11 @@
-﻿using System.Collections.Generic;
-using k;
+﻿using k;
+using Prime31;
 using UnityEngine;
 
 [RequireComponent(typeof(DynamicPlatformController))]
 public class PlayerInput : MonoBehaviour
 {
+    [SerializeField] private AudioClip jumpSfx;
     [SerializeField] private float horizontalDeadzone = 0.2f;
     [SerializeField] private float verticalDeadzone = 0.2f;
 
@@ -12,11 +13,12 @@ public class PlayerInput : MonoBehaviour
     private DynamicPlatformController platformController;
 
     private bool isFacingRight = true;
-    
+
     private void Awake()
     {
         animator = GetComponent<Animator>();
         platformController = GetComponent<DynamicPlatformController>();
+        platformController.IsJumpingThisFrameCallback += () => { SoundKit.instance.playSound(jumpSfx); };
     }
 
     private void Update()
@@ -41,7 +43,7 @@ public class PlayerInput : MonoBehaviour
         {
             platformController.Jump();
         }
-        
+
         animator.SetBool(AnimatorParams.RUNNING, Mathf.Abs(platformController.Velocity.x) > 0);
         animator.SetBool(AnimatorParams.IS_GROUNDED, platformController.IsGrounded);
         animator.SetFloat(AnimatorParams.V_SPEED, platformController.Velocity.y);
@@ -55,7 +57,7 @@ public class PlayerInput : MonoBehaviour
             scale.x *= -1;
             transform.localScale = scale;
         }
-    
+
         this.isFacingRight = isFacingRight;
     }
 }
