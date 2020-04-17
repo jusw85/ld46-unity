@@ -1,4 +1,5 @@
-﻿using k;
+﻿using Jusw85.Common;
+using k;
 using Prime31;
 using UnityEngine;
 using UnityEngine.SceneManagement;
@@ -7,14 +8,14 @@ public class MainGame : MonoBehaviour
 {
     [SerializeField] private AudioClip bgm;
     private HUDManager hudManager;
+    private SoundKit soundKit;
 
     private void Start()
     {
+        soundKit = Toolbox.Instance.Get<SoundKit>();
+
         LoadHUD();
-        if (bgm != null)
-        {
-            SoundKit.instance.playBackgroundMusic(bgm, 1.0f);
-        }
+        soundKit.playBackgroundMusic(bgm, 1.0f);
     }
 
     private void LoadHUD()

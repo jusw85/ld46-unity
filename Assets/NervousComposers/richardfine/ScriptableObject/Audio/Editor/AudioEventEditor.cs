@@ -13,16 +13,16 @@ public class AudioEventEditor : Editor
         // _previewer = EditorUtility
         //     .CreateGameObjectWithHideFlags("Audio preview", HideFlags.HideAndDontSave, typeof(AudioSource))
         //     .GetComponent<AudioSource>();
-        Debug.Log("Creating");
         _previewer = EditorUtility
             .CreateGameObjectWithHideFlags("Audio preview", HideFlags.HideAndDontSave, typeof(SoundKit))
             .GetComponent<SoundKit>();
-        // _previewer.Awake();
+        _previewer.initialCapacity = 1;
+        _previewer.maxCapacity = 1;
+        _previewer.Awake();
     }
 
     public void OnDisable()
     {
-        Debug.Log("Destroying");
         DestroyImmediate(_previewer.gameObject);
     }
 

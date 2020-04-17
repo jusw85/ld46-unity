@@ -13,6 +13,7 @@ public class PlayerInput : MonoBehaviour
 
     private Animator animator;
     private DynamicPlatformController platformController;
+    private SoundKit soundKit;
 
     private bool isFacingRight = true;
 
@@ -20,15 +21,12 @@ public class PlayerInput : MonoBehaviour
     {
         animator = GetComponent<Animator>();
         platformController = GetComponent<DynamicPlatformController>();
-        platformController.IsJumpingThisFrameCallback += () => { jumpAudio?.Play(SoundKit.instance); };
     }
 
     private void Start()
     {
-        SoundKit k = Toolbox.Instance.Get<SoundKit>();
-        // Debug.Log(k.bgmGroup);
-        //
-        // Debug.Log(Toolbox.Instance.Get<Toolbox>());
+        soundKit = Toolbox.Instance.Get<SoundKit>();
+        platformController.IsJumpingThisFrameCallback += () => { jumpAudio?.Play(soundKit); };
     }
 
     private void Update()

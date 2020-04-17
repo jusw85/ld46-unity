@@ -9,14 +9,14 @@ namespace Prime31
 {
     public class SoundKit : MonoBehaviour
     {
-        public static SoundKit instance = null;
+        // public static SoundKit instance = null;
 
         [Tooltip("Anytime you play a sound and set the scaledVolume it is multiplied by this value")]
         public float soundEffectVolume = 1f;
 
         public int initialCapacity = 10;
         public int maxCapacity = 15;
-        public bool dontDestroyOnLoad = false;
+        // public bool dontDestroyOnLoad = false;
         public bool clearAllAudioClipsOnLevelLoad = false;
 
         public AudioMixerGroup bgmGroup;
@@ -28,25 +28,24 @@ namespace Prime31
         private Stack<SKSound> _availableSounds;
         private List<SKSound> _playingSounds;
 
-
         #region MonoBehaviour
 
-        void Awake()
+        public void Awake()
         {
-            // avoid duplicates
-            if (instance != null)
-            {
-                // we set dontDestroyOnLoad to false here due to the Destroy being delayed. it will avoid issues
-                // with OnLevelWasLoaded being called while the object is being destroyed.
-                dontDestroyOnLoad = false;
-                Destroy(gameObject);
-                return;
-            }
+            // // avoid duplicates
+            // if (instance != null)
+            // {
+            //     // we set dontDestroyOnLoad to false here due to the Destroy being delayed. it will avoid issues
+            //     // with OnLevelWasLoaded being called while the object is being destroyed.
+            //     dontDestroyOnLoad = false;
+            //     Destroy(gameObject);
+            //     return;
+            // }
+            //
+            // instance = this;
 
-            instance = this;
-
-            if (dontDestroyOnLoad)
-                DontDestroyOnLoad(gameObject);
+            // if (dontDestroyOnLoad)
+            //     DontDestroyOnLoad(gameObject);
 
             // Create the _soundList to speed up sound playing in game
             _availableSounds = new Stack<SKSound>(maxCapacity);
@@ -55,19 +54,19 @@ namespace Prime31
             for (int i = 0; i < initialCapacity; i++)
                 _availableSounds.Push(new SKSound(this));
 
-            SceneManager.activeSceneChanged += activeSceneChanged;
+            // SceneManager.activeSceneChanged += activeSceneChanged;
         }
 
-
-        void OnApplicationQuit()
-        {
-            instance = null;
-        }
+        // void OnApplicationQuit()
+        // {
+        //     instance = null;
+        // }
 
 
         void activeSceneChanged(Scene scene1, Scene scene2)
         {
-            if (dontDestroyOnLoad && clearAllAudioClipsOnLevelLoad)
+            if (clearAllAudioClipsOnLevelLoad)
+            // if (dontDestroyOnLoad && clearAllAudioClipsOnLevelLoad)
             {
                 for (var i = _playingSounds.Count - 1; i >= 0; i--)
                 {
@@ -125,6 +124,11 @@ namespace Prime31
         /// <param name="loop">If set to <c>true</c> loop.</param>
         public void playBackgroundMusic(AudioClip audioClip, float volume, bool loop = true)
         {
+            if (audioClip == null)
+            {
+                Debug.LogWarning("playBackgroundMusic was called with a null AudioClip.");
+                return;
+            }
             if (backgroundSound == null)
                 backgroundSound = new SKSound(this);
 
@@ -143,6 +147,11 @@ namespace Prime31
         /// <param name="volumeScale">Volume scale.</param>
         public void playOneShot(AudioClip audioClip, float volumeScale = 1f)
         {
+            if (audioClip == null)
+            {
+                Debug.LogWarning("playOneShot was called with a null AudioClip.");
+                return;
+            }
             if (oneShotSound == null)
                 oneShotSound = new SKSound(this);
 

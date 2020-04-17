@@ -43,6 +43,11 @@ public class DynamicPlatformController : MonoBehaviour
         raycaster = GetComponent<Raycaster>();
     }
 
+    /// <summary>
+    /// TODO: Consider when to reset frame variables
+    /// Use case: Multiple FixedUpdates over a single Update, or vice versa
+    /// https://docs.unity3d.com/Manual/ExecutionOrder.html
+    /// </summary>
     private void FixedUpdate()
     {
         // Update internal state
