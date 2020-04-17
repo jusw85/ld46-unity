@@ -5,6 +5,7 @@ TagManager:
   serializedVersion: 2
   tags:
   - HUDManager
+  - MainGame
   layers:
   - Default
   - TransparentFX

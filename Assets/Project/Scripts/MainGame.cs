@@ -10,10 +10,26 @@ public class MainGame : MonoBehaviour
     private HUDManager hudManager;
     private SoundKit soundKit;
 
+    private bool selfInit = true;
+
+    public bool SelfInit
+    {
+        get => selfInit;
+        set => selfInit = value;
+    }
+
     private void Start()
     {
         soundKit = Toolbox.Instance.Get<SoundKit>();
 
+        if (SelfInit)
+        {
+            Init();
+        }
+    }
+
+    public void Init()
+    {
         LoadHUD();
         soundKit.playBackgroundMusic(bgm, 1.0f);
     }
@@ -44,9 +60,10 @@ public class MainGame : MonoBehaviour
             Camera[] cams = FindObjectsOfType<Camera>();
             foreach (Camera cam in cams)
             {
-                if (!cam.gameObject.scene.name.Equals(Scenes.DYNAMIC_PLATFORMING))
+                if (cam.gameObject.scene.name.Equals(Scenes.HUD))
                 {
                     cam.gameObject.SetActive(false);
+                    break;
                 }
             }
 
