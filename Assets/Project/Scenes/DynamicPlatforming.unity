@@ -582,7 +582,6 @@ MonoBehaviour:
   soundEffectVolume: 1
   initialCapacity: 10
   maxCapacity: 15
-  dontDestroyOnLoad: 0
   clearAllAudioClipsOnLevelLoad: 0
   bgmGroup: {fileID: -6244541035922040950, guid: d6442d78eba56f745863e5a5ba253f39,
     type: 2}
@@ -816,7 +815,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 23c28fd8d5d92980c85709bbee6b5242, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  jumpAudio: {fileID: 0}
+  jumpAudio: {fileID: 11400000, guid: 9ca370e2957c93700b3451a489657466, type: 2}
   horizontalDeadzone: 0.2
   verticalDeadzone: 0.2
 --- !u!95 &1791992982

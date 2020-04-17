@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 08b85db8674b42e18505041f237e74d6, type: 3}
-  m_Name: New Single Audio Event
+  m_Name: jumpSingle
   m_EditorClassIdentifier: 
   clip: {fileID: 8300000, guid: 245032a583571bb21a8a60ada0ceb0a5, type: 3}
   volume: 1
