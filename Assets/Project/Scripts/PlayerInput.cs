@@ -51,12 +51,16 @@ public class PlayerInput : MonoBehaviour
     private void Update()
     {
         Vector2 moveInput = new Vector2(Input.GetAxisRaw("Horizontal"), Input.GetAxisRaw("Vertical"));
+        if (!Mathf.Approximately(moveInput.x, 0))
+        {
+            SetIsFacingRight(moveInput.x > 0);   
+        }
 
         if (!isAttacking && Mathf.Abs(moveInput.x) > horizontalDeadzone)
         {
             float walkDir = Mathf.Sign(moveInput.x) > 0 ? 1 : -1;
             platformController.Walk(walkDir);
-            SetIsFacingRight(walkDir > 0);
+            // SetIsFacingRight(walkDir > 0);
         }
         else
         {

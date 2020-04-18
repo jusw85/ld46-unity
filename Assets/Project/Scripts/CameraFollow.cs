@@ -15,8 +15,12 @@ public class CameraFollow : MonoBehaviour
 
     private void LateUpdate()
     {
-        transform.position = targetPos.transform.position + offset;
+        // transform.position = targetPos.transform.position + offset;
 //        Debug.Log(targetPos);
+        Vector3 pos = transform.position;
+        pos.x = targetPos.transform.position.x;
+        // pos += offset;arget
+        transform.position = pos;
     }
 
     private void OnValidate()
