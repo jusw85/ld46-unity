@@ -94,4 +94,6 @@ public class PlayerInput : MonoBehaviour
         get => isAttacking;
         set => isAttacking = value;
     }
+
+    public bool IsFacingRight => isFacingRight;
 }

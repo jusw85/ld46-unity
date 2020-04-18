@@ -12,7 +12,7 @@ public class MainGame : MonoBehaviour
     private SoundKit soundKit;
 
     private bool selfInit = true;
-    public bool isInitialised;
+    private bool isInitialised;
     public event Action InitialisedCallback;
 
     public bool SelfInit
@@ -85,4 +85,6 @@ public class MainGame : MonoBehaviour
     }
 
     public HUDManager HudManager => hudManager;
+
+    public bool IsInitialised => isInitialised;
 }

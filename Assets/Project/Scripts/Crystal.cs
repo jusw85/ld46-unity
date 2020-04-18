@@ -10,7 +10,7 @@ public class Crystal : MonoBehaviour
     private void Start()
     {
         MainGame game = GameObject.FindWithTag(Tags.MAIN_GAME)?.GetComponent<MainGame>();
-        if (game.isInitialised)
+        if (game.IsInitialised)
         {
             initHudManager(game);
         }
