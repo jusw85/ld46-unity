@@ -124,5 +124,7 @@ public class DynamicPlatformController : MonoBehaviour
 
     public Vector2 Velocity => velocity;
 
+    public float JumpActuatedTime => jumpActuatedTime;
+
     #endregion
 }

@@ -13062,6 +13062,7 @@ MonoBehaviour:
   jumpAudio: {fileID: 11400000, guid: 9ca370e2957c93700b3451a489657466, type: 2}
   horizontalDeadzone: 0.2
   verticalDeadzone: 0.2
+  earlyAttackTimeTolerance: 0.1
 --- !u!95 &1791992982
 Animator:
   serializedVersion: 3

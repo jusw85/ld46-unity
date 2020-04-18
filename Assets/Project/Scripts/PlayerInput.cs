@@ -20,6 +20,9 @@ public class PlayerInput : MonoBehaviour
     private bool isJumping;
     private bool isFacingRight = true;
 
+    private float attackActuatedTime = -1f;
+    [SerializeField] private float earlyAttackTimeTolerance = 0.1f;
+
     private void Awake()
     {
         animator = GetComponent<Animator>();
@@ -34,7 +37,15 @@ public class PlayerInput : MonoBehaviour
             isJumping = true;
             jumpAudio?.Play(soundKit);
         };
-        platformController.IsLandingThisFrameCallback += () => { isJumping = false; };
+        platformController.IsLandingThisFrameCallback += () =>
+        {
+            isJumping = false;
+            if (Time.time - attackActuatedTime <= earlyAttackTimeTolerance)
+            {
+                attackCanAttackCancel = false;
+                animator.SetTrigger(AnimatorParams.ATTACK);
+            }
+        };
     }
 
     private void Update()
@@ -57,22 +68,27 @@ public class PlayerInput : MonoBehaviour
         bool jumpPressed = jumpKeyPressed || upKeyPressed;
         if (jumpPressed)
         {
-            if (!isAttacking)
-            {
-                platformController.Jump();
-            }
-            else if (attackCanAttackCancel)
-            {
-                platformController.Jump();
-            }
+            platformController.Jump();
+            // if (!isAttacking)
+            // {
+            //     platformController.Jump();
+            // }
+            // else if (attackCanAttackCancel)
+            // {
+            //     platformController.Jump();
+            // }
         }
 
-        if (!isJumping && Input.GetButtonDown("Fire1") &&
-            (!isAttacking || (isAttacking && attackCanAttackCancel)))
+        if (Input.GetButtonDown("Fire1"))
         {
-            // isAttacking = true;
-            attackCanAttackCancel = false;
-            animator.SetTrigger(AnimatorParams.ATTACK);
+            attackActuatedTime = Time.time;
+            if (!isJumping &&
+                (!isAttacking || (isAttacking && attackCanAttackCancel)))
+            {
+                // isAttacking = true;
+                attackCanAttackCancel = false;
+                animator.SetTrigger(AnimatorParams.ATTACK);
+            }
         }
 
         animator.SetBool(AnimatorParams.RUNNING, Mathf.Abs(platformController.Velocity.x) > 0);
@@ -96,7 +112,7 @@ public class PlayerInput : MonoBehaviour
     {
         attackCanAttackCancel = true;
     }
-    
+
     // public void EnableJumpCancel()
     // {
     //     attackCanJumpCancel = true;
