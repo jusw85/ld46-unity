@@ -69,7 +69,9 @@ public class PlayerInput : MonoBehaviour
 
         bool upKeyPressed = moveInput.y > verticalDeadzone;
         bool jumpKeyPressed = Input.GetButtonDown("Jump");
-        bool jumpPressed = jumpKeyPressed || upKeyPressed;
+        // bool jumpKeyPressed = Input.GetKeyDown("k");
+        // bool jumpPressed = jumpKeyPressed || upKeyPressed;
+        bool jumpPressed = jumpKeyPressed;
         if (jumpPressed)
         {
             platformController.Jump();

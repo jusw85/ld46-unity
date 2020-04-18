@@ -35,6 +35,8 @@ public class DynamicPlatformController : MonoBehaviour
     private float leftGroundTime = -1f;
     private bool isJumpingThisFrame;
 
+    [SerializeField] private float gravityScale = 1.5f;
+
     #endregion
 
     private void Awake()
@@ -43,6 +45,12 @@ public class DynamicPlatformController : MonoBehaviour
         raycaster = GetComponent<Raycaster>();
     }
 
+    private bool jumpReleased;
+    private void Update()
+    {
+        jumpReleased = Input.GetButtonUp("Jump");
+        // jumpReleased = Input.GetKeyUp("k");
+    }
     /// <summary>
     /// TODO: Consider when to reset frame variables
     /// Use case: Multiple FixedUpdates over a single Update, or vice versa
@@ -50,6 +58,19 @@ public class DynamicPlatformController : MonoBehaviour
     /// </summary>
     private void FixedUpdate()
     {
+        // Debug.Log(rb2d.gravityScale);
+        // bool jumpReleased = Input.GetButtonUp("Jump") || Input.GetAxisRaw("Vertical") <= 0;
+        // if (Mathf.Approximately(velocity.y, 0))
+        if (isGrounded)
+        {
+            rb2d.gravityScale = 1.0f;
+        }
+        else if (velocity.y < 0 || velocity.y > 0 && jumpReleased)
+        // else if (jumpReleased)
+        {
+            rb2d.gravityScale = gravityScale;
+        }
+
         // Update internal state
         Raycaster.CollisionInfo collisions = raycaster.Collide(groundCheckProtrusion);
         bool prevIsGrounded = isGrounded;
@@ -98,6 +119,8 @@ public class DynamicPlatformController : MonoBehaviour
 
         void DoJump()
         {
+            jumpReleased = false;
+            
             jumpCount++;
             velocity.y = jumpVelocity;
             jumpActuatedTime = -1f;

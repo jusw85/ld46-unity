@@ -2206,7 +2206,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 81908044}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -22.592545, y: 5.2977815, z: -10.521444}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 2116553049}
@@ -10697,7 +10697,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 861338112}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 14.162544, y: -0.9577813, z: 4.3339443}
+  m_LocalPosition: {x: -8.43, y: 4.34, z: -6.1875}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 257800837}
@@ -13075,6 +13075,7 @@ MonoBehaviour:
   groundCheckProtrusion: {x: 0, y: -0.05}
   earlyJumpTimeTolerance: 0.1
   lateJumpTimeTolerance: 0.1
+  gravityScale: 2
 --- !u!114 &1791992979
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -13354,7 +13355,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2116553048}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -5.427456, y: -2.9177814, z: 5.8668265}
+  m_LocalPosition: {x: -28.02, y: 2.38, z: -4.654618}
   m_LocalScale: {x: 2.95, y: 5.125, z: 1}
   m_Children: []
   m_Father: {fileID: 81908045}
@@ -13464,17 +13465,17 @@ PrefabInstance:
     - target: {fileID: 1501533280964235410, guid: f2fd5892347ea9bada355e89f836d35a,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -22.847454
+      value: -45.44
       objectReference: {fileID: 0}
     - target: {fileID: 1501533280964235410, guid: f2fd5892347ea9bada355e89f836d35a,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0.9577813
+      value: 4.34
       objectReference: {fileID: 0}
     - target: {fileID: 1501533280964235410, guid: f2fd5892347ea9bada355e89f836d35a,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 4.3339443
+      value: -6.1875
       objectReference: {fileID: 0}
     - target: {fileID: 1501533280964235410, guid: f2fd5892347ea9bada355e89f836d35a,
         type: 3}
