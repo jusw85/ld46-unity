@@ -50,6 +50,11 @@ public class PlayerInput : MonoBehaviour
         {
             platformController.Jump();
         }
+        
+        if (Input.GetButtonDown("Fire1"))
+        {
+            animator.SetTrigger(AnimatorParams.ATTACK);
+        }
 
         animator.SetBool(AnimatorParams.RUNNING, Mathf.Abs(platformController.Velocity.x) > 0);
         animator.SetBool(AnimatorParams.IS_GROUNDED, platformController.IsGrounded);
