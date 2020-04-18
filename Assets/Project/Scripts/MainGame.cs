@@ -1,4 +1,5 @@
-﻿using Jusw85.Common;
+﻿using System;
+using Jusw85.Common;
 using k;
 using Prime31;
 using UnityEngine;
@@ -11,6 +12,8 @@ public class MainGame : MonoBehaviour
     private SoundKit soundKit;
 
     private bool selfInit = true;
+    public bool isInitialised;
+    public event Action InitialisedCallback;
 
     public bool SelfInit
     {
@@ -50,9 +53,11 @@ public class MainGame : MonoBehaviour
             {
                 InitHUD();
                 enabled = true;
+                
+                isInitialised = true;
+                InitialisedCallback?.Invoke();
             };
         }
-
         return;
 
         void InitHUD()
@@ -79,11 +84,5 @@ public class MainGame : MonoBehaviour
         }
     }
 
-    private void Update()
-    {
-        if (Input.GetKeyDown("p"))
-        {
-            hudManager.SetText();
-        }
-    }
+    public HUDManager HudManager => hudManager;
 }

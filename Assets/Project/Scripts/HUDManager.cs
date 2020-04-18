@@ -5,11 +5,8 @@ public class HUDManager : MonoBehaviour
 {
     [SerializeField] private Text text;
 
-    private int z = 0;
-
-    public void SetText()
+    public void SetHealth(int health)
     {
-        z++;
-        text.text = z.ToString();
+        text.text = "Crystal Health: " + health;
     }
 }
