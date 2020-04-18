@@ -9,11 +9,21 @@ public class EnemyMover : MonoBehaviour
     private void Awake()
     {
         rb2d = GetComponent<Rigidbody2D>();
-        rb2d.velocity = Vector2.left * walkSpeed;
+    }
+
+    private void Start()
+    {
+        rb2d.velocity = new Vector2(walkSpeed, 0);
     }
 
     public void Hurt()
     {
         Destroy(gameObject);
+    }
+
+    public float WalkSpeed
+    {
+        get => walkSpeed;
+        set => walkSpeed = value;
     }
 }
