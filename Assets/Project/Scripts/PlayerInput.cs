@@ -14,6 +14,8 @@ public class PlayerInput : MonoBehaviour
     private DynamicPlatformController platformController;
     private SoundKit soundKit;
 
+    private bool isAttacking;
+    private bool isJumping;
     private bool isFacingRight = true;
 
     private void Awake()
@@ -25,14 +27,19 @@ public class PlayerInput : MonoBehaviour
     private void Start()
     {
         soundKit = Toolbox.Instance.Get<SoundKit>();
-        platformController.IsJumpingThisFrameCallback += () => { jumpAudio?.Play(soundKit); };
+        platformController.IsJumpingThisFrameCallback += () =>
+        {
+            isJumping = true;
+            jumpAudio?.Play(soundKit);
+        };
+        platformController.IsLandingThisFrameCallback += () => { isJumping = false; };
     }
 
     private void Update()
     {
         Vector2 moveInput = new Vector2(Input.GetAxisRaw("Horizontal"), Input.GetAxisRaw("Vertical"));
 
-        if (Mathf.Abs(moveInput.x) > horizontalDeadzone)
+        if (!isAttacking && Mathf.Abs(moveInput.x) > horizontalDeadzone)
         {
             float walkDir = Mathf.Sign(moveInput.x) > 0 ? 1 : -1;
             platformController.Walk(walkDir);
@@ -46,13 +53,14 @@ public class PlayerInput : MonoBehaviour
         bool upKeyPressed = moveInput.y > verticalDeadzone;
         bool jumpKeyPressed = Input.GetButtonDown("Jump");
         bool jumpPressed = jumpKeyPressed || upKeyPressed;
-        if (jumpPressed)
+        if (!isAttacking && !isJumping && jumpPressed)
         {
             platformController.Jump();
         }
-        
-        if (Input.GetButtonDown("Fire1"))
+
+        if (!isAttacking && !isJumping && Input.GetButtonDown("Fire1"))
         {
+            isAttacking = true;
             animator.SetTrigger(AnimatorParams.ATTACK);
         }
 
@@ -71,5 +79,10 @@ public class PlayerInput : MonoBehaviour
         }
 
         this.isFacingRight = isFacingRight;
+    }
+
+    public void allowAttack()
+    {
+        isAttacking = false;
     }
 }
