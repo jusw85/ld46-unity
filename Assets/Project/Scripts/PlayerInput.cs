@@ -14,7 +14,8 @@ public class PlayerInput : MonoBehaviour
     private DynamicPlatformController platformController;
     private SoundKit soundKit;
 
-    private bool canAttackCancel;
+    private bool attackCanAttackCancel;
+    private bool attackCanJumpCancel;
     private bool isAttacking;
     private bool isJumping;
     private bool isFacingRight = true;
@@ -54,16 +55,23 @@ public class PlayerInput : MonoBehaviour
         bool upKeyPressed = moveInput.y > verticalDeadzone;
         bool jumpKeyPressed = Input.GetButtonDown("Jump");
         bool jumpPressed = jumpKeyPressed || upKeyPressed;
-        if (!isAttacking && jumpPressed)
+        if (jumpPressed)
         {
-            platformController.Jump();
+            if (!isAttacking)
+            {
+                platformController.Jump();
+            }
+            else if (attackCanAttackCancel)
+            {
+                platformController.Jump();
+            }
         }
 
         if (!isJumping && Input.GetButtonDown("Fire1") &&
-            (!isAttacking || (isAttacking && canAttackCancel)))
+            (!isAttacking || (isAttacking && attackCanAttackCancel)))
         {
             // isAttacking = true;
-            canAttackCancel = false;
+            attackCanAttackCancel = false;
             animator.SetTrigger(AnimatorParams.ATTACK);
         }
 
@@ -86,8 +94,13 @@ public class PlayerInput : MonoBehaviour
 
     public void EnableAttackCancel()
     {
-        canAttackCancel = true;
+        attackCanAttackCancel = true;
     }
+    
+    // public void EnableJumpCancel()
+    // {
+    //     attackCanJumpCancel = true;
+    // }
 
     public bool IsAttacking
     {
