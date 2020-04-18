@@ -13,6 +13,7 @@ namespace Prime31
 
         [Tooltip("Anytime you play a sound and set the scaledVolume it is multiplied by this value")]
         public float soundEffectVolume = 1f;
+        public float bgmVolume = 1f;
 
         public int initialCapacity = 10;
         public int maxCapacity = 15;
@@ -132,7 +133,7 @@ namespace Prime31
             if (backgroundSound == null)
                 backgroundSound = new SKSound(this);
 
-            backgroundSound.playAudioClip(audioClip, volume, 1f, 0f, bgmGroup);
+            backgroundSound.playAudioClip(audioClip, volume * bgmVolume, 1f, 0f, bgmGroup);
             backgroundSound.setLoop(loop);
         }
 

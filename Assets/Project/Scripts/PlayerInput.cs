@@ -54,7 +54,7 @@ public class PlayerInput : MonoBehaviour
         bool upKeyPressed = moveInput.y > verticalDeadzone;
         bool jumpKeyPressed = Input.GetButtonDown("Jump");
         bool jumpPressed = jumpKeyPressed || upKeyPressed;
-        if (!isAttacking && !isJumping && jumpPressed)
+        if (!isAttacking && jumpPressed)
         {
             platformController.Jump();
         }
@@ -62,7 +62,7 @@ public class PlayerInput : MonoBehaviour
         if (!isJumping && Input.GetButtonDown("Fire1") &&
             (!isAttacking || (isAttacking && canAttackCancel)))
         {
-            isAttacking = true;
+            // isAttacking = true;
             canAttackCancel = false;
             animator.SetTrigger(AnimatorParams.ATTACK);
         }
@@ -84,13 +84,14 @@ public class PlayerInput : MonoBehaviour
         this.isFacingRight = isFacingRight;
     }
 
-    public void enableAttackCancel()
+    public void EnableAttackCancel()
     {
         canAttackCancel = true;
     }
 
-    public void endAttack()
+    public bool IsAttacking
     {
-        isAttacking = false;
+        get => isAttacking;
+        set => isAttacking = value;
     }
 }
