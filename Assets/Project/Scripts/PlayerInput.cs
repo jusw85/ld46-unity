@@ -14,6 +14,7 @@ public class PlayerInput : MonoBehaviour
     private DynamicPlatformController platformController;
     private SoundKit soundKit;
 
+    private bool canAttackCancel;
     private bool isAttacking;
     private bool isJumping;
     private bool isFacingRight = true;
@@ -58,9 +59,11 @@ public class PlayerInput : MonoBehaviour
             platformController.Jump();
         }
 
-        if (!isAttacking && !isJumping && Input.GetButtonDown("Fire1"))
+        if (!isJumping && Input.GetButtonDown("Fire1") &&
+            (!isAttacking || (isAttacking && canAttackCancel)))
         {
             isAttacking = true;
+            canAttackCancel = false;
             animator.SetTrigger(AnimatorParams.ATTACK);
         }
 
@@ -81,7 +84,12 @@ public class PlayerInput : MonoBehaviour
         this.isFacingRight = isFacingRight;
     }
 
-    public void allowAttack()
+    public void enableAttackCancel()
+    {
+        canAttackCancel = true;
+    }
+
+    public void endAttack()
     {
         isAttacking = false;
     }
