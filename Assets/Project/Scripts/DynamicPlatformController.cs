@@ -46,11 +46,14 @@ public class DynamicPlatformController : MonoBehaviour
     }
 
     private bool jumpReleased;
+
     private void Update()
     {
-        jumpReleased = Input.GetButtonUp("Jump");
+        // jumpReleased = Input.GetButtonUp("Jump");
+        jumpReleased = !Input.GetButton("Jump");
         // jumpReleased = Input.GetKeyUp("k");
     }
+
     /// <summary>
     /// TODO: Consider when to reset frame variables
     /// Use case: Multiple FixedUpdates over a single Update, or vice versa
@@ -58,19 +61,6 @@ public class DynamicPlatformController : MonoBehaviour
     /// </summary>
     private void FixedUpdate()
     {
-        // Debug.Log(rb2d.gravityScale);
-        // bool jumpReleased = Input.GetButtonUp("Jump") || Input.GetAxisRaw("Vertical") <= 0;
-        // if (Mathf.Approximately(velocity.y, 0))
-        if (isGrounded)
-        {
-            rb2d.gravityScale = 1.0f;
-        }
-        else if (velocity.y < 0 || velocity.y > 0 && jumpReleased)
-        // else if (jumpReleased)
-        {
-            rb2d.gravityScale = gravityScale;
-        }
-
         // Update internal state
         Raycaster.CollisionInfo collisions = raycaster.Collide(groundCheckProtrusion);
         bool prevIsGrounded = isGrounded;
@@ -115,12 +105,32 @@ public class DynamicPlatformController : MonoBehaviour
 
         // Reset transient frame variables
         isJumpingThisFrame = false;
+
+
+        // velocity = rb2d.velocity;
+        // Debug.Log(rb2d.gravityScale);
+        // bool jumpReleased = Input.GetButtonUp("Jump") || Input.GetAxisRaw("Vertical") <= 0;
+        // if (Mathf.Approximately(velocity.y, 0))
+        if (isGrounded)
+        {
+            // Debug.Log("IsGrounded");
+            rb2d.gravityScale = 1.0f;
+        }
+        else if (velocity.y < 0 || (velocity.y > 0 && jumpReleased))
+            // else if (jumpReleased)
+        {
+            // Debug.Log("Other");
+            rb2d.gravityScale = gravityScale;
+            // rb2d.gravityScale = 1.0f;
+        }
+
         return;
 
         void DoJump()
         {
             jumpReleased = false;
-            
+            // rb2d.gravityScale = gravityScale;
+
             jumpCount++;
             velocity.y = jumpVelocity;
             jumpActuatedTime = -1f;
