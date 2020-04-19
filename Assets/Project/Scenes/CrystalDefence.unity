@@ -13068,6 +13068,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   bgm: {fileID: 8300000, guid: f80f0100cd297b90fa12f7e22e8bde92, type: 3}
+  totalTime: 30
 --- !u!4 &1531066441
 Transform:
   m_ObjectHideFlags: 0
