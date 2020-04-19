@@ -20,6 +20,12 @@ public class EnemyMover : MonoBehaviour
     private void Start()
     {
         rb2d.velocity = new Vector2(walkSpeed, 0);
+        if (WalkSpeed > 0)
+        {
+            Vector3 v = transform.localScale;
+            v.x *= -1;
+            transform.localScale = v;
+        }
     }
 
     private float dampVelocity;
