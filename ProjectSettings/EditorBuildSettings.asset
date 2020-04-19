@@ -9,8 +9,8 @@ EditorBuildSettings:
     path: Assets/Project/Scenes/Start/Start.unity
     guid: 7e6780f7b9988e7bfa2f8f9c717dc4fb
   - enabled: 1
-    path: Assets/Project/Scenes/DynamicPlatforming.unity
-    guid: 41d8c93f5f8dd5dd5b005c598916e8c1
+    path: Assets/Project/Scenes/CrystalDefence.unity
+    guid: 7ddd16388474a8ca79ee68ef458d14ed
   - enabled: 1
     path: Assets/Project/Scenes/HUD.unity
     guid: b19bd3b8376c49674aa4fc8e20b22823
