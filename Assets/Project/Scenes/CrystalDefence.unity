@@ -13191,8 +13191,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   target: {fileID: 1791992976}
   player: {fileID: 1791992981}
-  damping: 0.3
-  lookAheadFactor: 3.5
+  damping: 0.5
+  lookAheadFactor: 3
 --- !u!4 &1984577758 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 1501533280964235410, guid: f2fd5892347ea9bada355e89f836d35a,
