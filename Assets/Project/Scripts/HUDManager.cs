@@ -3,10 +3,16 @@ using UnityEngine.UI;
 
 public class HUDManager : MonoBehaviour
 {
-    [SerializeField] private Text text;
+    [SerializeField] private Text healthText;
+    [SerializeField] private Text timeText;
 
     public void SetHealth(int health)
     {
-        text.text = "Crystal Health: " + health;
+        healthText.text = "Crystal Health: " + health;
+    }
+    
+    public void SetTime(int time)
+    {
+        timeText.text = "Time: " + time;
     }
 }

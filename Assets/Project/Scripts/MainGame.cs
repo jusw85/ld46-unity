@@ -84,6 +84,13 @@ public class MainGame : MonoBehaviour
         }
     }
 
+    [SerializeField] private float totalTime; 
+    private void Update()
+    {
+        totalTime -= Time.deltaTime;
+        hudManager.SetTime(Mathf.FloorToInt(totalTime));
+    }
+
     public HUDManager HudManager => hudManager;
 
     public bool IsInitialised => isInitialised;
