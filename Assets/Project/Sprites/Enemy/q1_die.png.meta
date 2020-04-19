@@ -1,121 +1,7 @@
 fileFormatVersion: 2
-guid: f1186201a855daf6ebe4034b7ed59808
+guid: 4e9147dc3f57c9f48828467001657ffe
 TextureImporter:
-  internalIDToNameTable:
-  - first:
-      213: 2518875682023887262
-    second: q1_die_0
-  - first:
-      213: -1104264693348105420
-    second: q1_die_1
-  - first:
-      213: -8033130671028493215
-    second: q1_die_2
-  - first:
-      213: -3858286318187453201
-    second: q1_die_3
-  - first:
-      213: 8254551646901293492
-    second: q1_die_4
-  - first:
-      213: -608097084746927274
-    second: q1_die_5
-  - first:
-      213: 6500527539770630565
-    second: q1_die_6
-  - first:
-      213: 2948550829236661801
-    second: q1_die_7
-  - first:
-      213: -1302341348607490246
-    second: q1_die_8
-  - first:
-      213: -8487122175964182981
-    second: q1_die_9
-  - first:
-      213: 1786098489779906540
-    second: q1_die_10
-  - first:
-      213: 5560142208560625517
-    second: q1_die_11
-  - first:
-      213: 3742612429371812695
-    second: q1_die_12
-  - first:
-      213: 6693057219730223916
-    second: q1_die_13
-  - first:
-      213: -336225990538316959
-    second: q1_die_14
-  - first:
-      213: -2400628940658386098
-    second: q1_die_15
-  - first:
-      213: 4835815293661070325
-    second: q1_die_16
-  - first:
-      213: 893499830101215417
-    second: q1_die_17
-  - first:
-      213: 8138993136280510574
-    second: q1_die_18
-  - first:
-      213: -293132882658190931
-    second: q1_die_19
-  - first:
-      213: 7658664142459111939
-    second: q1_die_20
-  - first:
-      213: 2842304169336450993
-    second: q1_die_21
-  - first:
-      213: -8575575677140636862
-    second: q1_die_22
-  - first:
-      213: -192496409326410802
-    second: q1_die_23
-  - first:
-      213: 3895127833040344297
-    second: q1_die_24
-  - first:
-      213: -2014913790420198610
-    second: q1_die_25
-  - first:
-      213: 1034563582821255105
-    second: q1_die_26
-  - first:
-      213: -4873808652110690802
-    second: q1_die_27
-  - first:
-      213: -5232467824818230641
-    second: q1_die_28
-  - first:
-      213: 1616003852550216017
-    second: q1_die_29
-  - first:
-      213: 7134927632541557284
-    second: q1_die_30
-  - first:
-      213: -5862434915301947823
-    second: q1_die_31
-  - first:
-      213: -471690868786680614
-    second: q1_die_32
-  - first:
-      213: 3400001911692687610
-    second: q1_die_33
-  - first:
-      213: -1488556357511231209
-    second: q1_die_34
-  - first:
-      213: 2638415649404727645
-    second: q1_die_35
-  - first:
-      213: -4195305800681614950
-    second: q1_die_36
-  - first:
-      213: 4166828058430600683
-    second: q1_die_37
+  internalIDToNameTable: []
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -154,7 +40,7 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 2
+  spriteMode: 1
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
@@ -185,117 +71,9 @@ TextureImporter:
     overridden: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
-  - serializedVersion: 3
-    buildTarget: Standalone
-    maxTextureSize: 2048
-    resizeAlgorithm: 0
-    textureFormat: -1
-    textureCompression: 0
-    compressionQuality: 50
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    overridden: 0
-    androidETC2FallbackOverride: 0
-    forceMaximumCompressionQuality_BC6H_BC7: 0
-  - serializedVersion: 3
-    buildTarget: WebGL
-    maxTextureSize: 2048
-    resizeAlgorithm: 0
-    textureFormat: -1
-    textureCompression: 0
-    compressionQuality: 50
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    overridden: 0
-    androidETC2FallbackOverride: 0
-    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
-    sprites:
-    - serializedVersion: 2
-      name: q1_die_0
-      rect:
-        serializedVersion: 2
-        x: 0
-        y: 0
-        width: 256
-        height: 256
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: e9157645618d4f220800000000000000
-      internalID: 2518875682023887262
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: q1_die_1
-      rect:
-        serializedVersion: 2
-        x: 256
-        y: 0
-        width: 256
-        height: 256
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 4330bfeac1ddca0f0800000000000000
-      internalID: -1104264693348105420
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: q1_die_2
-      rect:
-        serializedVersion: 2
-        x: 512
-        y: 0
-        width: 256
-        height: 256
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 1642d0f4736948090800000000000000
-      internalID: -8033130671028493215
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: q1_die_3
-      rect:
-        serializedVersion: 2
-        x: 768
-        y: 0
-        width: 256
-        height: 256
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: fe4efa2290d947ac0800000000000000
-      internalID: -3858286318187453201
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
+    sprites: []
     outline: []
     physicsShape: []
     bones: []
