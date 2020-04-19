@@ -1,4 +1,5 @@
 using System;
+using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Text.RegularExpressions;
@@ -26,20 +27,32 @@ namespace Jusw85.Common
         private static void DoGenerateAnimatorParameters()
         {
             string[] guids = AssetDatabase.FindAssets("t:AnimatorController", new[] {searchPath});
+            Dictionary<string, int> dict = new Dictionary<string, int>();
             foreach (string guid in guids)
             {
                 string path = AssetDatabase.GUIDToAssetPath(guid);
                 AnimatorController controller = (AnimatorController) AssetDatabase.LoadMainAssetAtPath(path);
-                string content = GetClassContent(controller.parameters);
 
-                string folderPath = Application.dataPath + "/" + outFolder + "/";
-                string fullFileName = fileName + ".cs";
-                File.WriteAllText(folderPath + fullFileName, content);
-                AssetDatabase.ImportAsset("Assets/" + outFolder + fullFileName, ImportAssetOptions.ForceUpdate);
+                foreach (AnimatorControllerParameter parm in controller.parameters)
+                {
+                    dict.Add(parm.name, parm.nameHash);
+                }
             }
+
+            // var lines = dict.Select(kvp => kvp.Key + ": " + kvp.Value.ToString());
+            // foreach (string line in lines)
+            // {
+            //     Debug.Log(line);
+            // }
+            string content = GetClassContent(dict);
+            
+            string folderPath = Application.dataPath + "/" + outFolder + "/";
+            string fullFileName = fileName + ".cs";
+            File.WriteAllText(folderPath + fullFileName, content);
+            AssetDatabase.ImportAsset("Assets/" + outFolder + fullFileName, ImportAssetOptions.ForceUpdate);
         }
 
-        private static string GetClassContent(AnimatorControllerParameter[] parms)
+        private static string GetClassContent(Dictionary<string, int> dict)
         {
             var output = "";
             output += "//This class is auto-generated do not modify\n";
@@ -48,9 +61,9 @@ namespace Jusw85.Common
             output += "\tpublic static class " + fileName + "\n";
             output += "\t{\n";
 
-            foreach (AnimatorControllerParameter parm in parms)
+            foreach (KeyValuePair<string, int> kvp in dict)
             {
-                output += "\t\t" + buildConstVariable(parm.name, "", parm.nameHash.ToString()) + "\n";
+                output += "\t\t" + buildConstVariable(kvp.Key, "", kvp.Value.ToString()) + "\n";
             }
 
             output += "\t}\n";

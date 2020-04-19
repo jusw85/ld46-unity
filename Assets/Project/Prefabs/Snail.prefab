@@ -29,7 +29,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4861141279081285395}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -18.68, y: 2.9637182, z: -2.4999301}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4861141279391783349}
@@ -147,9 +147,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   walkSpeed: -2
-  maxHp: 5
+  maxHp: 3
   knockBackForce: 20
   knockBackRecoverTime: 0.1
+  snailDie: {fileID: 72708926272565564, guid: 1c1c1cdbfc48111dabd585d96d2dd61c, type: 3}
 --- !u!95 &5586778456462086344
 Animator:
   serializedVersion: 3
@@ -160,7 +161,7 @@ Animator:
   m_GameObject: {fileID: 4861141279081285395}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: a8ab5028aefce644bb421547c856a670, type: 2}
+  m_Controller: {fileID: 9100000, guid: c867d7d2933702e4789d5a3a9024c1ac, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0

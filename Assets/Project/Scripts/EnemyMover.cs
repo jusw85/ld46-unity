@@ -7,6 +7,7 @@ public class EnemyMover : MonoBehaviour
     [SerializeField] private int maxHp = 10;
     [SerializeField] private float knockBackForce = 2f;
     [SerializeField] private float knockBackRecoverTime = 0.5f;
+    [SerializeField] private GameObject snailDie;
 
     private Rigidbody2D rb2d;
     private int hp;
@@ -41,15 +42,22 @@ public class EnemyMover : MonoBehaviour
     {
         if (--hp <= 0)
         {
+            GameObject obj = Instantiate(snailDie, transform.position, Quaternion.identity);
+            obj.transform.localScale = transform.localScale;
             Destroy(gameObject);
         }
         else
         {
-            bool isFacingRight =
-                GameObject.FindWithTag(Tags.PLAYER)?.GetComponent<PlayerInput>()?.IsFacingRight ?? true;
-            Vector2 force = (isFacingRight ? Vector2.right : Vector2.left) * knockBackForce;
-            rb2d.AddForce(force, ForceMode2D.Impulse);
+            AddKnockback();
         }
+    }
+
+    private void AddKnockback()
+    {
+        bool isFacingRight =
+            GameObject.FindWithTag(Tags.PLAYER)?.GetComponent<PlayerInput>()?.IsFacingRight ?? true;
+        Vector2 force = (isFacingRight ? Vector2.right : Vector2.left) * knockBackForce;
+        rb2d.AddForce(force, ForceMode2D.Impulse);
     }
 
     public float WalkSpeed
