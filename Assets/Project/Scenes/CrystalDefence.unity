@@ -2533,12 +2533,12 @@ PrefabInstance:
     - target: {fileID: 1501533280814295605, guid: f2fd5892347ea9bada355e89f836d35a,
         type: 3}
       propertyPath: spawnMin
-      value: 5
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 1501533280814295605, guid: f2fd5892347ea9bada355e89f836d35a,
         type: 3}
       propertyPath: spawnMax
-      value: 10
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 1501533280964235410, guid: f2fd5892347ea9bada355e89f836d35a,
         type: 3}
@@ -12824,12 +12824,12 @@ PrefabInstance:
     - target: {fileID: 1501533280814295605, guid: f2fd5892347ea9bada355e89f836d35a,
         type: 3}
       propertyPath: spawnMin
-      value: 2
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 1501533280814295605, guid: f2fd5892347ea9bada355e89f836d35a,
         type: 3}
       propertyPath: spawnMax
-      value: 3
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 1501533280964235410, guid: f2fd5892347ea9bada355e89f836d35a,
         type: 3}
@@ -13393,12 +13393,12 @@ PrefabInstance:
     - target: {fileID: 1501533280814295605, guid: f2fd5892347ea9bada355e89f836d35a,
         type: 3}
       propertyPath: spawnMin
-      value: 5
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 1501533280814295605, guid: f2fd5892347ea9bada355e89f836d35a,
         type: 3}
       propertyPath: spawnMax
-      value: 10
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 1501533280964235410, guid: f2fd5892347ea9bada355e89f836d35a,
         type: 3}
@@ -14128,12 +14128,12 @@ PrefabInstance:
     - target: {fileID: 1501533280814295605, guid: f2fd5892347ea9bada355e89f836d35a,
         type: 3}
       propertyPath: spawnMin
-      value: 2
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 1501533280814295605, guid: f2fd5892347ea9bada355e89f836d35a,
         type: 3}
       propertyPath: spawnMax
-      value: 3
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 1501533280814295606, guid: f2fd5892347ea9bada355e89f836d35a,
         type: 3}
