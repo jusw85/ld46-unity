@@ -13220,7 +13220,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   soundEffectVolume: 1
-  bgmVolume: 1
+  bgmVolume: 0.2
   initialCapacity: 10
   maxCapacity: 15
   clearAllAudioClipsOnLevelLoad: 0
