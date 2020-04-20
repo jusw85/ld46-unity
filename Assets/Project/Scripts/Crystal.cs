@@ -11,9 +11,16 @@ public class Crystal : MonoBehaviour
     private HUDManager hudManager;
     private SpriteRenderer rend;
 
+    private FloatTween tween;
+    private FlashTweenTarget tweenTarget;
     private void Awake()
     {
         rend = GetComponent<SpriteRenderer>();
+        tween = new FloatTween();
+        tweenTarget = new FlashTweenTarget(rend);
+        // tween.initialize(tweenTarget, 0f, 1f);
+        // tween.setFrom(1f);
+        tween.setRecycleTween(false);
     }
 
     private void Start()
@@ -46,8 +53,11 @@ public class Crystal : MonoBehaviour
         {
             // Debug.Log("Crystal: touched");
             hudManager?.SetHealth(--health);
-            // rend.color = Color.white;
-            // rend.ZKcolorTo(new Color(1.0f, 200/255f, 200/255f), 0.2f).setLoops(LoopType.PingPong).start();
+            
+            if (tween.isRunning()) tween.stop(true, true);
+            tween.initialize(tweenTarget, 0f, 0.1f); 
+            tween.setFrom(0.5f).start();
+            
             if (health <= 0)
             {
                 StartCoroutine(CoroutineUtils.DelaySeconds(() =>
@@ -67,5 +77,25 @@ public class Crystal : MonoBehaviour
     {
         get => isEnding;
         set => isEnding = value;
+    }
+    
+    class FlashTweenTarget : AbstractTweenTarget<SpriteRenderer, float>
+    {
+        public static readonly int MATERIAL_FLASHAMOUNT_ID = Shader.PropertyToID("_FlashAmount");
+        
+        public override void setTweenedValue(float value)
+        {
+            _target.material.SetFloat(MATERIAL_FLASHAMOUNT_ID, value);
+        }
+
+        public override float getTweenedValue()
+        {
+            return _target.material.GetFloat(MATERIAL_FLASHAMOUNT_ID);
+        }
+
+        public FlashTweenTarget(SpriteRenderer spriteRenderer)
+        {
+            _target = spriteRenderer;
+        }
     }
 }
