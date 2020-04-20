@@ -30,7 +30,7 @@ public class Crystal : MonoBehaviour
     {
         if (other.tag.Equals(Tags.ENEMY))
         {
-            Debug.Log("Crystal: touched");
+            // Debug.Log("Crystal: touched");
             hudManager?.SetHealth(--health);
             Destroy(other.gameObject);
         }
