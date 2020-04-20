@@ -1,4 +1,5 @@
 ﻿using k;
+using Prime31.ZestKit;
 using UnityEngine;
 
 public class EnemyMover : MonoBehaviour
@@ -10,12 +11,21 @@ public class EnemyMover : MonoBehaviour
     [SerializeField] private GameObject snailDie;
 
     private Rigidbody2D rb2d;
+    private SpriteRenderer rend;
     private int hp;
+
+    private FloatTween tween;
+    private Crystal.FlashTweenTarget tweenTarget;
 
     private void Awake()
     {
         rb2d = GetComponent<Rigidbody2D>();
+        rend = GetComponent<SpriteRenderer>();
         hp = maxHp;
+
+        tween = new FloatTween();
+        tweenTarget = new Crystal.FlashTweenTarget(rend);
+        tween.setRecycleTween(false);
     }
 
     private void Start()
@@ -40,10 +50,16 @@ public class EnemyMover : MonoBehaviour
 
     public void Hurt()
     {
+        if (tween.isRunning()) tween.stop(true, true);
+        tween.initialize(tweenTarget, 0f, 0.2f); 
+        tween.setFrom(1.0f).start();
+        
         if (--hp <= 0)
         {
             GameObject obj = Instantiate(snailDie, transform.position, Quaternion.identity);
             obj.transform.localScale = transform.localScale;
+            
+            if (tween.isRunning()) tween.stop(true, true);
             Destroy(gameObject);
         }
         else

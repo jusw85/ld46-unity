@@ -79,7 +79,7 @@ public class Crystal : MonoBehaviour
         set => isEnding = value;
     }
     
-    class FlashTweenTarget : AbstractTweenTarget<SpriteRenderer, float>
+    public class FlashTweenTarget : AbstractTweenTarget<SpriteRenderer, float>
     {
         public static readonly int MATERIAL_FLASHAMOUNT_ID = Shader.PropertyToID("_FlashAmount");
         
