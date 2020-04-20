@@ -46,12 +46,13 @@ MonoBehaviour:
   initialDelay: 1
   spawnMin: 3
   spawnMax: 5
-  runForever: 0
+  runForever: 1
   spawnInstances: 4
   numPerSpawn: 1
   walkSpeed: 2
   objectToSpawn: {fileID: 4861141279081285395, guid: 23dbe3f1b56bd7077ba2bea59ec16cae,
     type: 3}
+  anim: {fileID: 791639829627057315}
 --- !u!1 &1501533280964235411
 GameObject:
   m_ObjectHideFlags: 0
