@@ -37,6 +37,10 @@ public class Crystal : MonoBehaviour
         {
             // Debug.Log("Crystal: touched");
             hudManager?.SetHealth(--health);
+            if (health <= 0)
+            {
+                GameObject.FindWithTag(Tags.MAIN_GAME)?.GetComponent<MainGame>()?.Lose();
+            }
             Destroy(other.gameObject);
         }
     }

@@ -100,6 +100,16 @@ public class MainGame : MonoBehaviour
         }
     }
 
+    public void Lose()
+    {
+        isEnding = true;
+        PlayerInput pi = GameObject.FindWithTag(Tags.PLAYER)?.GetComponent<PlayerInput>();
+        pi.IsEnding = true;
+        Crystal c = GameObject.FindWithTag(Tags.CRYSTAL)?.GetComponent<Crystal>();
+        c.IsEnding = true;
+        hudManager.Lose();
+    }
+    
     private void Win()
     {
         isEnding = true;
@@ -107,6 +117,7 @@ public class MainGame : MonoBehaviour
         pi.IsEnding = true;
         Crystal c = GameObject.FindWithTag(Tags.CRYSTAL)?.GetComponent<Crystal>();
         c.IsEnding = true;
+        hudManager.Win();
     }
 
     public HUDManager HudManager => hudManager;
