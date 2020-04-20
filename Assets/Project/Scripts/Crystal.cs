@@ -62,10 +62,10 @@ public class Crystal : MonoBehaviour
             
             if (health <= 0)
             {
-                StartCoroutine(CoroutineUtils.DelaySeconds(() =>
-                {
-                    rend.ZKalphaTo(0, 1).start();
-                }, 2));
+                //StartCoroutine(CoroutineUtils.DelaySeconds(() =>
+               // {
+                    //rend.ZKalphaTo(0, 1).start();
+                //}, 2));
                 anim.SetTrigger(AnimatorParams.DIE);
                 GameObject.FindWithTag(Tags.MAIN_GAME)?.GetComponent<MainGame>()?.Lose();
             }

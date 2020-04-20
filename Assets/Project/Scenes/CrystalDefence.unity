@@ -2294,8 +2294,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 129861031}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 12.995664, y: 5.586308, z: 1}
+  m_LocalPosition: {x: -24.97, y: 0.94, z: 0}
+  m_LocalScale: {x: 17.934015, y: 5.418719, z: 1}
   m_Children: []
   m_Father: {fileID: 1032863146}
   m_RootOrder: 0
@@ -2533,12 +2533,12 @@ PrefabInstance:
     - target: {fileID: 1501533280814295605, guid: f2fd5892347ea9bada355e89f836d35a,
         type: 3}
       propertyPath: spawnMin
-      value: 1.5
+      value: 2.5
       objectReference: {fileID: 0}
     - target: {fileID: 1501533280814295605, guid: f2fd5892347ea9bada355e89f836d35a,
         type: 3}
       propertyPath: spawnMax
-      value: 2.5
+      value: 3.5
       objectReference: {fileID: 0}
     - target: {fileID: 1501533280814295605, guid: f2fd5892347ea9bada355e89f836d35a,
         type: 3}
@@ -2655,7 +2655,7 @@ PrefabInstance:
     - target: {fileID: 1501533280814295605, guid: f2fd5892347ea9bada355e89f836d35a,
         type: 3}
       propertyPath: spawnMin
-      value: 2
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 1501533280814295605, guid: f2fd5892347ea9bada355e89f836d35a,
         type: 3}
@@ -7694,7 +7694,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 8a3fb51dd49635c96bad99f298f3c1ab, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 0}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -12839,12 +12839,12 @@ PrefabInstance:
     - target: {fileID: 1501533280814295605, guid: f2fd5892347ea9bada355e89f836d35a,
         type: 3}
       propertyPath: spawnMin
-      value: 3
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 1501533280814295605, guid: f2fd5892347ea9bada355e89f836d35a,
         type: 3}
       propertyPath: spawnMax
-      value: 4
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 1501533280964235410, guid: f2fd5892347ea9bada355e89f836d35a,
         type: 3}
@@ -13058,7 +13058,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 8a3fb51dd49635c96bad99f298f3c1ab, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 0}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -13358,7 +13358,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0794ed23a5644a72ea88d69bacbcff13, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bgm: {fileID: 8300000, guid: f80f0100cd297b90fa12f7e22e8bde92, type: 3}
+  bgm: {fileID: 8300000, guid: 71bed16db2f41284bb4dc4e0ad0f8674, type: 3}
   totalTime: 60
 --- !u!4 &1531066441
 Transform:
@@ -13408,12 +13408,12 @@ PrefabInstance:
     - target: {fileID: 1501533280814295605, guid: f2fd5892347ea9bada355e89f836d35a,
         type: 3}
       propertyPath: spawnMin
-      value: 1.5
+      value: 2.5
       objectReference: {fileID: 0}
     - target: {fileID: 1501533280814295605, guid: f2fd5892347ea9bada355e89f836d35a,
         type: 3}
       propertyPath: spawnMax
-      value: 2.5
+      value: 3.5
       objectReference: {fileID: 0}
     - target: {fileID: 1501533280964235410, guid: f2fd5892347ea9bada355e89f836d35a,
         type: 3}
@@ -13721,7 +13721,7 @@ PrefabInstance:
     - target: {fileID: 1501533280814295605, guid: f2fd5892347ea9bada355e89f836d35a,
         type: 3}
       propertyPath: spawnMin
-      value: 2
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 1501533280814295605, guid: f2fd5892347ea9bada355e89f836d35a,
         type: 3}
@@ -14154,12 +14154,12 @@ PrefabInstance:
     - target: {fileID: 1501533280814295605, guid: f2fd5892347ea9bada355e89f836d35a,
         type: 3}
       propertyPath: spawnMin
-      value: 3
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 1501533280814295605, guid: f2fd5892347ea9bada355e89f836d35a,
         type: 3}
       propertyPath: spawnMax
-      value: 4
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 1501533280814295606, guid: f2fd5892347ea9bada355e89f836d35a,
         type: 3}
@@ -14260,6 +14260,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Enabled
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4440591747063787740, guid: eaa4982730ebb1f62aa394b0f2fb68dd,
+        type: 3}
+      propertyPath: m_AssetsPPU
+      value: 36
       objectReference: {fileID: 0}
     - target: {fileID: 4440591747063787741, guid: eaa4982730ebb1f62aa394b0f2fb68dd,
         type: 3}
