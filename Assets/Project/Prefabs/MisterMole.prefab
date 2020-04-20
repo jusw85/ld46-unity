@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 4861141279081285396}
   - component: {fileID: 5586778456462086344}
   m_Layer: 9
-  m_Name: LongLegs
+  m_Name: MisterMole
   m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -75,7 +75,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: -4361693365134113379, guid: 6d582ae863e25531e9708891678cf18b,
+  m_Sprite: {fileID: 1042230298182093985, guid: f3c52f277ca6973139b0910b18a65dc2,
     type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -147,10 +147,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   walkSpeed: -2
-  maxHp: 1
+  maxHp: 7
   knockBackForce: 20
   knockBackRecoverTime: 0.1
-  snailDie: {fileID: 72708926272565564, guid: ea0256a985bf8178193cfc33b15e146b, type: 3}
+  snailDie: {fileID: 72708926272565564, guid: 5c3df041703893c11961523cad2fc0cc, type: 3}
 --- !u!95 &5586778456462086344
 Animator:
   serializedVersion: 3
@@ -161,7 +161,7 @@ Animator:
   m_GameObject: {fileID: 4861141279081285395}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 22100000, guid: d7b5dcec32f5506e2aa19c2a53baf777, type: 2}
+  m_Controller: {fileID: 22100000, guid: e77d179b9b176d7d181312efb5b360c7, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
