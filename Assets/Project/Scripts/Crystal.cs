@@ -28,11 +28,24 @@ public class Crystal : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D other)
     {
+        if (isEnding)
+        {
+            return;
+        }
+
         if (other.tag.Equals(Tags.ENEMY))
         {
             // Debug.Log("Crystal: touched");
             hudManager?.SetHealth(--health);
             Destroy(other.gameObject);
         }
+    }
+
+    private bool isEnding;
+
+    public bool IsEnding
+    {
+        get => isEnding;
+        set => isEnding = value;
     }
 }

@@ -84,11 +84,29 @@ public class MainGame : MonoBehaviour
         }
     }
 
-    [SerializeField] private float totalTime; 
+    [SerializeField] private float totalTime;
+    private bool isEnding;
     private void Update()
     {
-        totalTime -= Time.deltaTime;
-        hudManager.SetTime(Mathf.FloorToInt(totalTime));
+        if (!isEnding)
+        {
+            totalTime -= Time.deltaTime;
+            if (totalTime <= 0f)
+            {
+                totalTime = 0f;
+                Win();
+            }
+            hudManager.SetTime(Mathf.FloorToInt(totalTime));
+        }
+    }
+
+    private void Win()
+    {
+        isEnding = true;
+        PlayerInput pi = GameObject.FindWithTag(Tags.PLAYER)?.GetComponent<PlayerInput>();
+        pi.IsEnding = true;
+        Crystal c = GameObject.FindWithTag(Tags.CRYSTAL)?.GetComponent<Crystal>();
+        c.IsEnding = true;
     }
 
     public HUDManager HudManager => hudManager;

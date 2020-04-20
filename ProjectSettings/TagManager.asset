@@ -7,6 +7,7 @@ TagManager:
   - HUDManager
   - MainGame
   - Enemy
+  - Crystal
   layers:
   - Default
   - TransparentFX

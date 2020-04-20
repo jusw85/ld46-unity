@@ -51,9 +51,10 @@ public class PlayerInput : MonoBehaviour
     private void Update()
     {
         Vector2 moveInput = new Vector2(Input.GetAxisRaw("Horizontal"), Input.GetAxisRaw("Vertical"));
+        if (isEnding) moveInput = Vector2.zero;
         if (!Mathf.Approximately(moveInput.x, 0))
         {
-            SetIsFacingRight(moveInput.x > 0);   
+            SetIsFacingRight(moveInput.x > 0);
         }
 
         if (!isAttacking && Mathf.Abs(moveInput.x) > horizontalDeadzone)
@@ -72,6 +73,7 @@ public class PlayerInput : MonoBehaviour
         // bool jumpKeyPressed = Input.GetKeyDown("k");
         // bool jumpPressed = jumpKeyPressed || upKeyPressed;
         bool jumpPressed = jumpKeyPressed;
+        if (isEnding) jumpPressed = false;
         if (jumpPressed)
         {
             platformController.Jump();
@@ -85,7 +87,9 @@ public class PlayerInput : MonoBehaviour
             // }
         }
 
-        if (Input.GetButtonDown("Fire1"))
+        bool firePress = Input.GetButtonDown("Fire1");
+        if (isEnding) firePress = false;
+        if (firePress)
         {
             attackActuatedTime = Time.time;
             if (!isJumping &&
@@ -131,4 +135,21 @@ public class PlayerInput : MonoBehaviour
     }
 
     public bool IsFacingRight => isFacingRight;
+
+    private bool isEnding;
+
+    public bool IsEnding
+    {
+        get => isEnding;
+        set
+        {
+            isEnding = value;
+            StartCoroutine(CoroutineUtils.DelaySeconds(() =>
+            {
+                GetComponent<Rigidbody2D>().isKinematic = true;
+                animator.SetTrigger(AnimatorParams.VICTORY);
+            }, 2f));
+        }
+    }
+    
 }

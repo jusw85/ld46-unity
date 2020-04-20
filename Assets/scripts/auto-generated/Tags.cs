@@ -13,5 +13,6 @@ namespace k
 		public const string HUDMANAGER = "HUDManager";
 		public const string MAIN_GAME = "MainGame";
 		public const string ENEMY = "Enemy";
+		public const string CRYSTAL = "Crystal";
 	}
 }

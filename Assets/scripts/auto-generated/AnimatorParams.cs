@@ -8,6 +8,7 @@ namespace k
 		public const int IS_GROUNDED = 1360771445;
 		public const int V_SPEED = 1685875088;
 		public const int ATTACK = 1203776827;
+		public const int VICTORY = 1891303514;
 		public const int SPAWNING = -1751598244;
 	}
 }
