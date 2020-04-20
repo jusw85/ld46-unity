@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 1431586103}
   - component: {fileID: 1431586104}
   m_Layer: 0
-  m_Name: LongLegsDie
+  m_Name: MisterMoleDie
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -95,7 +95,7 @@ Animator:
   m_GameObject: {fileID: 72708926272565564}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 22100000, guid: 61e4b52389e38329c84d53938f6ce71c, type: 2}
+  m_Controller: {fileID: 22100000, guid: df05bd5fc066f95d5974bf49e62e6e8d, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0

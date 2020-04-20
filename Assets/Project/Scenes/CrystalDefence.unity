@@ -2512,7 +2512,7 @@ PrefabInstance:
     - target: {fileID: 1501533280814295605, guid: f2fd5892347ea9bada355e89f836d35a,
         type: 3}
       propertyPath: walkSpeed
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 1501533280814295605, guid: f2fd5892347ea9bada355e89f836d35a,
         type: 3}
@@ -2528,7 +2528,7 @@ PrefabInstance:
     - target: {fileID: 1501533280814295605, guid: f2fd5892347ea9bada355e89f836d35a,
         type: 3}
       propertyPath: initialDelay
-      value: 20
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 1501533280814295605, guid: f2fd5892347ea9bada355e89f836d35a,
         type: 3}
@@ -2543,7 +2543,7 @@ PrefabInstance:
     - target: {fileID: 1501533280964235410, guid: f2fd5892347ea9bada355e89f836d35a,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -53.53
+      value: -44.4
       objectReference: {fileID: 0}
     - target: {fileID: 1501533280964235410, guid: f2fd5892347ea9bada355e89f836d35a,
         type: 3}
@@ -2645,12 +2645,12 @@ PrefabInstance:
     - target: {fileID: 1501533280814295605, guid: f2fd5892347ea9bada355e89f836d35a,
         type: 3}
       propertyPath: initialDelay
-      value: 10
+      value: 12
       objectReference: {fileID: 0}
     - target: {fileID: 1501533280964235410, guid: f2fd5892347ea9bada355e89f836d35a,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -48.9
+      value: -48.5
       objectReference: {fileID: 0}
     - target: {fileID: 1501533280964235410, guid: f2fd5892347ea9bada355e89f836d35a,
         type: 3}
@@ -12814,12 +12814,17 @@ PrefabInstance:
     - target: {fileID: 1501533280814295605, guid: f2fd5892347ea9bada355e89f836d35a,
         type: 3}
       propertyPath: walkSpeed
-      value: -2
+      value: -1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1501533280814295605, guid: f2fd5892347ea9bada355e89f836d35a,
+        type: 3}
+      propertyPath: initialDelay
+      value: 20
       objectReference: {fileID: 0}
     - target: {fileID: 1501533280964235410, guid: f2fd5892347ea9bada355e89f836d35a,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -12.92
+      value: -4.6
       objectReference: {fileID: 0}
     - target: {fileID: 1501533280964235410, guid: f2fd5892347ea9bada355e89f836d35a,
         type: 3}
@@ -13190,7 +13195,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   soundEffectVolume: 0
-  bgmVolume: 0
+  bgmVolume: 1
   initialCapacity: 10
   maxCapacity: 15
   clearAllAudioClipsOnLevelLoad: 0
@@ -13357,7 +13362,7 @@ PrefabInstance:
     - target: {fileID: 1501533280814295605, guid: f2fd5892347ea9bada355e89f836d35a,
         type: 3}
       propertyPath: walkSpeed
-      value: -1
+      value: -2
       objectReference: {fileID: 0}
     - target: {fileID: 1501533280814295605, guid: f2fd5892347ea9bada355e89f836d35a,
         type: 3}
@@ -13373,7 +13378,7 @@ PrefabInstance:
     - target: {fileID: 1501533280814295605, guid: f2fd5892347ea9bada355e89f836d35a,
         type: 3}
       propertyPath: initialDelay
-      value: 20
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 1501533280814295605, guid: f2fd5892347ea9bada355e89f836d35a,
         type: 3}
@@ -13388,7 +13393,7 @@ PrefabInstance:
     - target: {fileID: 1501533280964235410, guid: f2fd5892347ea9bada355e89f836d35a,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -5.33
+      value: -15.24
       objectReference: {fileID: 0}
     - target: {fileID: 1501533280964235410, guid: f2fd5892347ea9bada355e89f836d35a,
         type: 3}
@@ -13685,12 +13690,12 @@ PrefabInstance:
     - target: {fileID: 1501533280814295605, guid: f2fd5892347ea9bada355e89f836d35a,
         type: 3}
       propertyPath: initialDelay
-      value: 10
+      value: 12
       objectReference: {fileID: 0}
     - target: {fileID: 1501533280964235410, guid: f2fd5892347ea9bada355e89f836d35a,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -10.59
+      value: -9.5
       objectReference: {fileID: 0}
     - target: {fileID: 1501533280964235410, guid: f2fd5892347ea9bada355e89f836d35a,
         type: 3}
@@ -13849,7 +13854,7 @@ Transform:
   m_GameObject: {fileID: 2070258524}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 1.8454369, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1791992976}
   m_RootOrder: 0
@@ -13911,7 +13916,7 @@ BoxCollider2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2070258524}
-  m_Enabled: 0
+  m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
   m_IsTrigger: 0
@@ -13998,7 +14003,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.0832777, y: -0.7283685}
+  m_Offset: {x: -0.050765038, y: -0.7283685}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -14009,7 +14014,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.7393284, y: 4.471686}
+  m_Size: {x: 1.3895893, y: 4.471686}
   m_EdgeRadius: 0
 --- !u!212 &2116553051
 SpriteRenderer:
@@ -14100,6 +14105,16 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 81908045}
     m_Modifications:
+    - target: {fileID: 1501533280814295605, guid: f2fd5892347ea9bada355e89f836d35a,
+        type: 3}
+      propertyPath: initialDelay
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 1501533280814295605, guid: f2fd5892347ea9bada355e89f836d35a,
+        type: 3}
+      propertyPath: walkSpeed
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 1501533280814295606, guid: f2fd5892347ea9bada355e89f836d35a,
         type: 3}
       propertyPath: m_LocalPosition.y
@@ -14114,7 +14129,7 @@ PrefabInstance:
     - target: {fileID: 1501533280964235410, guid: f2fd5892347ea9bada355e89f836d35a,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -45.44
+      value: -53.2
       objectReference: {fileID: 0}
     - target: {fileID: 1501533280964235410, guid: f2fd5892347ea9bada355e89f836d35a,
         type: 3}

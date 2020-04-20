@@ -147,7 +147,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   walkSpeed: -2
-  maxHp: 3
+  maxHp: 7
   knockBackForce: 20
   knockBackRecoverTime: 0.1
   snailDie: {fileID: 72708926272565564, guid: 1c1c1cdbfc48111dabd585d96d2dd61c, type: 3}

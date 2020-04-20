@@ -48,14 +48,18 @@ public class EnemyMover : MonoBehaviour
         rb2d.velocity = v;
     }
 
+    private bool isDying = false;
+
     public void Hurt()
     {
+        if (isDying) return;
         if (tween.isRunning()) tween.stop(true, true);
         tween.initialize(tweenTarget, 0f, 0.2f); 
         tween.setFrom(1.0f).start();
         
         if (--hp <= 0)
         {
+            isDying = true;
             GameObject obj = Instantiate(snailDie, transform.position, Quaternion.identity);
             obj.transform.localScale = transform.localScale;
             
