@@ -9,6 +9,7 @@ public class PlayerAnimationAttackBehaviour : StateMachineBehaviour
     {
         PlayerInput pi = animator.GetComponent<PlayerInput>();
         pi.IsAttacking = true;
+        pi.PlayAttackAudio();
     }
 
     // OnStateUpdate is called on each Update frame between OnStateEnter and OnStateExit callbacks

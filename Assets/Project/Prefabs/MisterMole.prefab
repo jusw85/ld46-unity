@@ -151,6 +151,8 @@ MonoBehaviour:
   knockBackForce: 20
   knockBackRecoverTime: 0.1
   snailDie: {fileID: 72708926272565564, guid: 5c3df041703893c11961523cad2fc0cc, type: 3}
+  hitClip: {fileID: 11400000, guid: ef223c9ff6a5a023cb7ad944a7ac2512, type: 2}
+  deathClip: {fileID: 11400000, guid: c5608f380650dcc63a4d4d02a422f8f6, type: 2}
 --- !u!95 &5586778456462086344
 Animator:
   serializedVersion: 3

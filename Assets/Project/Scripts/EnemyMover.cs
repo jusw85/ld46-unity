@@ -1,4 +1,6 @@
-﻿using k;
+﻿using Jusw85.Common;
+using k;
+using Prime31;
 using Prime31.ZestKit;
 using UnityEngine;
 
@@ -48,21 +50,25 @@ public class EnemyMover : MonoBehaviour
         rb2d.velocity = v;
     }
 
-    private bool isDying = false;
+    // private bool isDying = false;
+    [SerializeField] private AudioEvent hitClip;
+    [SerializeField] private AudioEvent deathClip;
 
     public void Hurt()
     {
-        if (isDying) return;
+        hitClip?.Play(Toolbox.Instance.Get<SoundKit>());
+        // if (isDying) return;
         if (tween.isRunning()) tween.stop(true, true);
-        tween.initialize(tweenTarget, 0f, 0.2f); 
+        tween.initialize(tweenTarget, 0f, 0.2f);
         tween.setFrom(1.0f).start();
-        
+
         if (--hp <= 0)
         {
-            isDying = true;
+            deathClip?.Play(Toolbox.Instance.Get<SoundKit>());
+            // isDying = true;
             GameObject obj = Instantiate(snailDie, transform.position, Quaternion.identity);
             obj.transform.localScale = transform.localScale;
-            
+
             if (tween.isRunning()) tween.stop(true, true);
             Destroy(gameObject);
         }
@@ -70,6 +76,11 @@ public class EnemyMover : MonoBehaviour
         {
             AddKnockback();
         }
+    }
+
+    public void StopTween()
+    {
+        if (tween.isRunning()) tween.stop(true, true);
     }
 
     private void AddKnockback()

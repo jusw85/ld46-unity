@@ -7,6 +7,7 @@ using UnityEngine;
 public class PlayerInput : MonoBehaviour
 {
     [SerializeField] private AudioEvent jumpAudio;
+    [SerializeField] private AudioEvent slashAudio;
     [SerializeField] private float horizontalDeadzone = 0.2f;
     [SerializeField] private float verticalDeadzone = 0.2f;
 
@@ -132,6 +133,11 @@ public class PlayerInput : MonoBehaviour
     {
         get => isAttacking;
         set => isAttacking = value;
+    }
+
+    public void PlayAttackAudio()
+    {
+        slashAudio?.Play(soundKit);
     }
 
     public bool IsFacingRight => isFacingRight;

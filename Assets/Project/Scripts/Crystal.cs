@@ -70,6 +70,7 @@ public class Crystal : MonoBehaviour
                 GameObject.FindWithTag(Tags.MAIN_GAME)?.GetComponent<MainGame>()?.Lose();
             }
 
+            other.gameObject.GetComponent<EnemyMover>().StopTween();
             Destroy(other.gameObject);
         }
     }
