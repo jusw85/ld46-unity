@@ -2,6 +2,7 @@
 using Jusw85.Common;
 using k;
 using Prime31;
+using Prime31.TransitionKit;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -109,6 +110,12 @@ public class MainGame : MonoBehaviour
         Crystal c = GameObject.FindWithTag(Tags.CRYSTAL)?.GetComponent<Crystal>();
         c.IsEnding = true;
         hudManager.Lose();
+        StartCoroutine(CoroutineUtils.DelaySeconds(() =>
+        {
+            FadeTransition tr = new FadeTransition {nextScene = 4};
+            TransitionKit.instance.transitionWithDelegate(tr);
+            // SceneManager.LoadScene(Scenes.LOSE);
+        }, 8f));
     }
     
     private void Win()
@@ -119,6 +126,11 @@ public class MainGame : MonoBehaviour
         Crystal c = GameObject.FindWithTag(Tags.CRYSTAL)?.GetComponent<Crystal>();
         c.IsEnding = true;
         hudManager.Win();
+        StartCoroutine(CoroutineUtils.DelaySeconds(() =>
+        {
+            FadeTransition tr = new FadeTransition {nextScene = 3};
+            TransitionKit.instance.transitionWithDelegate(tr);
+        }, 8f));
     }
 
     public HUDManager HudManager => hudManager;

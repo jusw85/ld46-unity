@@ -6,8 +6,10 @@ namespace k
 		public const string START = "Start";
 		public const string CRYSTAL_DEFENCE = "CrystalDefence";
 		public const string HUD = "HUD";
+		public const string WIN = "Win";
+		public const string LOSE = "Lose";
 
-		public const int TOTAL_SCENES = 3;
+		public const int TOTAL_SCENES = 5;
 
 
 		public static int nextSceneIndex()
