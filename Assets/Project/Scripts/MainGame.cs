@@ -25,6 +25,7 @@ public class MainGame : MonoBehaviour
     {
         soundKit = Toolbox.Instance.Get<SoundKit>();
 
+        enabled = false;
         if (SelfInit)
         {
             Init();
@@ -44,10 +45,10 @@ public class MainGame : MonoBehaviour
         if (Application.isEditor && hudScene.isLoaded)
         {
             InitHUD();
+            enabled = true;
         }
         else
         {
-            enabled = false;
             AsyncOperation op = SceneManager.LoadSceneAsync(Scenes.HUD, LoadSceneMode.Additive);
             op.completed += operation =>
             {
