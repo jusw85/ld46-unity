@@ -12821,6 +12821,16 @@ PrefabInstance:
       propertyPath: initialDelay
       value: 20
       objectReference: {fileID: 0}
+    - target: {fileID: 1501533280814295605, guid: f2fd5892347ea9bada355e89f836d35a,
+        type: 3}
+      propertyPath: spawnMin
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1501533280814295605, guid: f2fd5892347ea9bada355e89f836d35a,
+        type: 3}
+      propertyPath: spawnMax
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 1501533280964235410, guid: f2fd5892347ea9bada355e89f836d35a,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -13854,7 +13864,7 @@ Transform:
   m_GameObject: {fileID: 2070258524}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1.8454369, y: 1, z: 1}
+  m_LocalScale: {x: 1.4578952, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1791992976}
   m_RootOrder: 0
@@ -13916,7 +13926,7 @@ BoxCollider2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2070258524}
-  m_Enabled: 1
+  m_Enabled: 0
   m_Density: 1
   m_Material: {fileID: 0}
   m_IsTrigger: 0
@@ -14114,6 +14124,16 @@ PrefabInstance:
         type: 3}
       propertyPath: walkSpeed
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1501533280814295605, guid: f2fd5892347ea9bada355e89f836d35a,
+        type: 3}
+      propertyPath: spawnMin
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1501533280814295605, guid: f2fd5892347ea9bada355e89f836d35a,
+        type: 3}
+      propertyPath: spawnMax
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 1501533280814295606, guid: f2fd5892347ea9bada355e89f836d35a,
         type: 3}

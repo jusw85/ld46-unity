@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 1431586100}
   - component: {fileID: 1431586103}
   - component: {fileID: 1431586104}
+  - component: {fileID: 650664648196634751}
   m_Layer: 0
   m_Name: SnailDie
   m_TagString: Untagged
@@ -52,7 +53,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: 1d0519f0b473fe4f1adbc80a3155ba54, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -131,3 +132,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   initialDelay: 1
   fadeTime: 1.5
+--- !u!114 &650664648196634751
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 72708926272565564}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 653f0c81b2864ed0a9af6ccd6f395285, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

@@ -10,12 +10,14 @@ public class Crystal : MonoBehaviour
 
     private HUDManager hudManager;
     private SpriteRenderer rend;
+    private Animator anim;
 
     private FloatTween tween;
     private FlashTweenTarget tweenTarget;
     private void Awake()
     {
         rend = GetComponent<SpriteRenderer>();
+        anim = GetComponent<Animator>();
         tween = new FloatTween();
         tweenTarget = new FlashTweenTarget(rend);
         // tween.initialize(tweenTarget, 0f, 1f);
@@ -64,6 +66,7 @@ public class Crystal : MonoBehaviour
                 {
                     rend.ZKalphaTo(0, 1).start();
                 }, 2));
+                anim.SetTrigger(AnimatorParams.DIE);
                 GameObject.FindWithTag(Tags.MAIN_GAME)?.GetComponent<MainGame>()?.Lose();
             }
 
