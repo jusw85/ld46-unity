@@ -16,7 +16,7 @@ namespace Jusw85.Common
     [CanEditMultipleObjects]
     public class GUIStyleDemoEditor : Editor
     {
-        private static readonly string[] Styles =
+        private static string[] styles =
         {
             "box", "button", "toggle", "label", "window", "textfield", "textarea", "horizontalslider",
             "horizontalsliderthumb", "verticalslider", "verticalsliderthumb", "horizontalscrollbar",
@@ -184,7 +184,10 @@ namespace Jusw85.Common
             EditorGUILayout.Space();
             if (guiStyles == null)
             {
-                guiStyles = Styles.Select(s => new GUIStyle(GUI.skin.GetStyle(s))).ToArray();
+                // guiStyles = styles.Select(s => new GUIStyle(GUI.skin.GetStyle(s))).ToArray();
+                Dictionary<string,GUIStyle> dict = GetStyleList();
+                styles = dict.Keys.ToArray();
+                guiStyles = dict.Values.Select(s => new GUIStyle(s)).ToArray();
                 imagePositions = guiStyles.Select(s => s.imagePosition).ToArray();
             }
 
@@ -192,7 +195,7 @@ namespace Jusw85.Common
             {
                 GUIStyle guiStyle = guiStyles[i];
                 guiStyle.imagePosition = showTextProp.boolValue ? imagePositions[i] : ImagePosition.ImageOnly;
-                EditorGUILayout.TextField(Styles[i], "text", guiStyle);
+                EditorGUILayout.TextField(styles[i], "text", guiStyle);
             }
 
             serializedObject.ApplyModifiedProperties();
