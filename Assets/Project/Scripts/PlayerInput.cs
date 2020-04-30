@@ -3,6 +3,7 @@ using k;
 using Prime31;
 using UnityEngine;
 
+[RequireComponent(typeof(Animator))]
 [RequireComponent(typeof(DynamicPlatformController))]
 public class PlayerInput : MonoBehaviour
 {
@@ -11,8 +12,8 @@ public class PlayerInput : MonoBehaviour
     [SerializeField] private float horizontalDeadzone = 0.2f;
     [SerializeField] private float verticalDeadzone = 0.2f;
 
-    private Animator animator;
-    private DynamicPlatformController platformController;
+    [SerializeField, HideInInspector] private Animator animator;
+    [SerializeField, HideInInspector] private DynamicPlatformController platformController;
     private SoundKit soundKit;
 
     private bool attackCanAttackCancel;
@@ -24,7 +25,7 @@ public class PlayerInput : MonoBehaviour
     private float attackActuatedTime = -1f;
     [SerializeField] private float earlyAttackTimeTolerance = 0.1f;
 
-    private void Awake()
+    private void OnValidate()
     {
         animator = GetComponent<Animator>();
         platformController = GetComponent<DynamicPlatformController>();
@@ -157,5 +158,4 @@ public class PlayerInput : MonoBehaviour
             }, 2f));
         }
     }
-    
 }
